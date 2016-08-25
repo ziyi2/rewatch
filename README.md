@@ -32,7 +32,7 @@ npm install -g webpack
 
 - `--config`
 
-`webpack —config webpack.custom.config.js`使`webpack`命令不再执行`webpack.config.js`而是执行我们指定的`webpack`配置文件
+`webpack —config webpack.[name].config.js`使`webpack`命令不再执行`webpack.config.js`而是执行指定的`webpack`配置文件
 
 - `--progress --watch`
 
