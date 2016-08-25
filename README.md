@@ -14,33 +14,36 @@ npm install -g webpack
 
 
 
-
-
 ### 初步配置package.json
 
-当然,由于目前最新稳定版本的`node`[`v6.4.0`]仍然不支持`import`以及`export`,需要使用`webpack`打包处理,首先需要在`Express`项目的根目录下新建配置文件`webpack/dev/webpack.node.config`,然后在`package.json`文件中写入以下配置
+首先需要在`Express`项目的根目录下新建配置文件`webpack/dev/webpack.node.config`,然后在`package.json`文件中写入以下配置
 
 ```javascript
   "scripts" : {
     "dev" : "parallelshell \"npm run webpack-node\" ",
-    "webpack-node" : "webpack --config ./webpack/dev/webpack.node.config.js --progress --watch --color"
+    "webpack-node" : "webpack --config ./webpack/dev/webpack.node.config.js --progress --watch --colors"
   }
 ```
 说明:
 
 - `parallelshell` 
-因为之后还要引入浏览器端的`webpack`配置执行文件,所以这里需要并行执行`shell`命令
+
+因为之后还要引入`node`端的`webpack`配置执行文件,所以这里需要并行执行`shell`命令
 
 - `--config`
+
 `webpack —config webpack.custom.config.js`使`webpack`命令不再执行`webpack.config.js`而是执行我们指定的`webpack`配置文件
 
 - `--progress --watch`
+
 使打包处于监听状态,但是之后可以使用`nodemon`替换这种监听状态
 
-- `color`
+- `colors`
+
 当然也可以让输出的日志高亮显示
 
 - 启动命令
+
 `npm run dev`
 
 
