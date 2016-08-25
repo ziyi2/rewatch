@@ -5,5 +5,8 @@ var router = express.Router();
 //index-首页
 router.get('/',index.render);
 
+
+
+
 module.exports = router;
 

@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "parallelshell \"npm run webpack-browser\" ",
-    "webpack-browser": "webpack-dev-server --config ./webpack/dev/webpack.browser.config.js --inline --hot --quiet --display-error-details",
-    "webpack-node": "webpack --config ./webpack/dev/webpack.node.config.js --progress --watch"
+    "webpack-browser": "webpack --config ./webpack/dev/webpack.browser.config.js --progress --watch --colors",
+    "webpack-node": "webpack --config ./webpack/dev/webpack.node.config.js --progress --watch --colors"
   },
   "dependencies": {
     "body-parser": "~1.15.1",

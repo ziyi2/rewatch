@@ -17,14 +17,17 @@ module.exports = {
     output: {
         path: './client/javascript/dist',
         filename: "[name].js"
-                        //publicPath这个属性先保留
+                        //publicPath这个属性先保留 http://webpack.github.io/docs/configuration.html#output-publicpath
     },
     externals: {        //使用自己带的库(需要在html中加载),遇到require的时候不用,只用全局变量
         'react': 'React',
         'react-dom': 'ReactDOM'
     },
-    resolve: {          //require的时候可以省略后缀
-        extensions: ['', '.js', '.jsx']
+    resolve: {
+        extensions: ['', '.js', '.jsx'],            //require的时候可以省略后缀
+        alias: {
+            //AppStore : 'js/stores/AppStores.js',  //后续直接 require('AppStore') 即可
+        }
     },
     module: {
         loaders: [
@@ -66,7 +69,7 @@ module.exports = {
             }
         ]
     },
-    plugins: [commonsPlugin] //打包多个入口文件时会提取出公用的部分，生成common.js
+    plugins: [commonsPlugin]  //打包多个入口文件时会提取出公用的部分，生成common.js
 };
 
 
