@@ -6,5 +6,5 @@
 node_modules
 
 #bower lib
-client/public/bowerLib/*
-!client/public/bowerLib/bower.md
+client/bowerLib/*
+!client/bowerLib/bower.md
