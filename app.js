@@ -41,8 +41,8 @@ for(var i in routes){
     app.use(route, require('./server/routers/'+ name));
   }
 }
-
 app.use('/', require('./server/routers/index.router')); //两个路由 /index和/都可以
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

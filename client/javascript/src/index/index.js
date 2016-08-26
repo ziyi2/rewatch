@@ -1,3 +1,6 @@
 
-console.log('index.js');
+import './components/TodoList';
+
+// require('./components/TodoList');
+
 
