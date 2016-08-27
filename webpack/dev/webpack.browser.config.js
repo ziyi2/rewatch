@@ -97,12 +97,14 @@ var commonsPlugin = new webpack.optimize.CommonsChunkPlugin('common.js');
 
 
 module.exports = {
-    entry: [
-        index: ['./client/javascript/src/index/index.js']
-    ],
+    entry: {
+         index: './client/javascript/src/index/index.js'
+    },
+
     output: {
         path: './client/javascript/dist',
         filename: "[name].js",
+        publicPath: 'http://localhost:3000/assets/'
     },        
 
     externals: {    //使用自己带的库(需要在html中加载),遇到require的时候不用,只用全局变量
