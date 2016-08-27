@@ -4,16 +4,40 @@
 
 ### 安装webpack
 
+`Webpack`是一个模块打包器。它将根据模块的依赖关系进行静态分析，然后将这些模块按照指定的规则生成对应的静态资源。
+
 ```javascript
 npm install -g webpack
 ```
 
-### 安装支持ES6的模块
+#### 加载loader转换器
+
+`Webpack`本身只能处理原生的`JavaScript`模块，但是`loader`转换器可以将各种类型的资源转换成`JavaScript`模块。这样，任何资源都可以成为 `Webpack`可以处理的模块。
+
+`css-loader`来处理`css`文件，`style-loader`来应用这些样式
+
+```javascript
+npm install css-loader style-loader --save-dev
+```
+
+`jsx-loader`来处理`jsx`文件
+
+```javascript
+npm install jsx-loader --save-dev
+```
+
+`babel-loader`来转转换`ES6`语法
+
+```javascript
+npm install babel-loader --save-dev
+```
+
+#### 安装支持ES6的模块
 
 For ES6/ES2015 support
 
 ```javascript
-npm install babel babel-core babel-loader --save-dev
+npm install babel babel-core --save-dev
 ```
 
 ```javascript
