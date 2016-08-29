@@ -10,6 +10,6 @@ class TodoList extends React.Component {
     }
 }
 
-var to_do_list = document.getElementById('to-do-list');
+var to_do_list = document.getElementById('list-to-do');
 ReactDOM.render(<TodoList/>,to_do_list);
 
