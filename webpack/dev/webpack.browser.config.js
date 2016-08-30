@@ -144,7 +144,7 @@ module.exports = {
                 //我的配置项
                 loader: 'babel-loader',
                 query: {
-                    //plugins: ['transform-runtime'],  //此项虽然对于编译代码非常有些帮助,但是会产生额外的重复负担代码
+                    //plugins: ['babel-plugin-transform-runtime'],  //此项虽然对于编译代码非常有些帮助,但是会产生额外的重复负担代码
                     presets:['es2015','stage-0','react']  //此项可以省略而是添加在.babelrc文件,但是官方建议保留在这里
                 }
             }
