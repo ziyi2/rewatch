@@ -106,6 +106,11 @@ module.exports = {
         filename: "[name].js"
     },
 
+    externals: {    //使用自己带的库(需要在html中加载),遇到require的时候不用,只用全局变量
+        'react': 'React',
+        'react-dom': 'ReactDOM'
+    },
+
     module: {
         loaders: [
             {

@@ -1,10 +1,14 @@
-
-#IDE Config
+#Ide Config
 .idea
 
 #Dependency directory
 node_modules
 
-#bower lib
+#Bower pack
 client/bowerLib/*
 !client/bowerLib/bower.md
+
+#Webpack create
+client/javascript/dist/*
+!client/javascript/dist/dist.md
+
