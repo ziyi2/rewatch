@@ -2,11 +2,23 @@
 <html lang="en">
 	<%- include head.html %>
 <body>
-	<div class="page-header">
-		<h1>React-toDoList</h1>
-	</div>
-	<div class="body" id="list-to-do">
 
+	<div class="row">
+		<div class="alert alert-info" role="alert">
+			<ul>
+				<li>1.添加组件AddList,ShowDelList</li>
+				<li>2.设置显示的state属性lists并传递给两个子组件,一旦该属性变化重新渲染TodoList组件(Diff算法)</li>
+				<li>3.ShowDelList组件根据lists属性显示列表</li>
+				<li>4.设置可控表单的显示属性list,传递给子组件AddList(value={this.props.list}就变成可控了,除非setState,否则表单不会变化)(这里处理的不好,因为也传递给了ShowDelList)</li>
+				<li>5.在AddList中设置可控输入input表单数据,使input不能有空格以及数据长度不能超过10</li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="body" id="list-to-do">
+
+		</div>
 	</div>
 	<%- include script.html %>
 </body>
