@@ -127,26 +127,9 @@ parallelshell　"npm run webpack-node"
 
 
 
+### 服务器端配置(暂时停止)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-### 查看nodejs本身对ES6的支持程度
+#### 首先查看nodejs本身对ES6的支持程度
 
 首先查看当前`nodejs`环境对于`ES6`的支持程度
 
