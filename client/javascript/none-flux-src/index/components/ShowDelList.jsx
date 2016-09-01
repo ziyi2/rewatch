@@ -17,7 +17,7 @@ class ShowDelList extends React.Component {
 
         return (
             <div className="row">
-                <h4>ShowDelList</h4>
+                <h4>Compont - ShowDelList</h4>
                 <ul className="list-group">
                     {
                         _this.props.lists.map(function(list,index,lists) {

@@ -11,7 +11,8 @@ module.exports = {
     target: 'web',
 
     entry: {
-        index: './client/javascript/src/index/index.js'
+        index: './client/javascript/none-flux-src/index/index.js',
+        flux_index: './client/javascript/flux-src/index/index.jsx'
     },
 
     output: {
