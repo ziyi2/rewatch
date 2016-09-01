@@ -150,11 +150,8 @@ npm install -g n
 n stable
 ```
 
-结论: 目前最新稳定版本的`node`[`v6.4.0`]仍然不支持`import`以及`export`，需要使用`webpack`和`babel`插件进行打包处理
+>提示: 目前最新稳定版本的`node`[`v6.4.0`]仍然不支持`import`以及`export`，需要使用`webpack`和`babel`插件进行打包处理
 
-
-//这个配置连接有用!
-http://www.tuicool.com/articles/zEZneuq
 
 
 ## Flux
