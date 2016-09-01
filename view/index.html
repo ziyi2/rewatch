@@ -9,8 +9,17 @@
 				<li>1.添加组件AddList,ShowDelList</li>
 				<li>2.设置显示的state属性lists并传递给两个子组件,一旦该属性变化重新渲染TodoList组件(Diff算法)</li>
 				<li>3.ShowDelList组件根据lists属性显示列表</li>
-				<li>4.设置可控表单的显示属性list,传递给子组件AddList(value={this.props.list}就变成可控了,除非setState,否则表单不会变化)(这里处理的不好,因为也传递给了ShowDelList)</li>
+				<li>4.设置可控表单的显示属性list,传递给子组件AddList(value={this.props.list}就变成可控了,除非setState,否则表单不会变化)</li>
 				<li>5.在AddList中设置可控输入input表单数据,使input不能有空格以及数据长度不能超过10</li>
+				<li>6.设置添加事件,添加inputValue到lists并重新渲染</li>
+				<li>7.设置删除事件</li>
+			</ul>
+		</div>
+
+
+		<div class="alert alert-danger" role="alert">
+			<ul>
+				<li>1.打包以后this指向发生了变化,任何地方都需要使用this.props.name.bind(this)</li>
 			</ul>
 		</div>
 	</div>

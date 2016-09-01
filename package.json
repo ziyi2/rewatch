@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+    "start": "node bin/www",
     "dev": "parallelshell \"npm run webpack-browser\" ",
     "webpack-browser": "webpack --config ./webpack/dev/webpack.browser.config.js --progress --watch --colors",
     "webpack-node": "webpack --config ./webpack/dev/webpack.node.config.js --progress --watch --colors"

@@ -21,27 +21,34 @@ class TodoList extends React.Component {
 
     setInputValue(list) {
         this.setState({
-            list:list   //只有这里设置了,表单input输入才会有反应并变化
-        })
+            list:list
+        });
+    }
+
+    setLists(lists) {
+        this.setState({
+            lists:lists
+        });
     }
 
 
     render() {
+        let addListProps = {
+            list: this.state.list,
+            lists: this.state.lists,
+            setInputValue: this.setInputValue.bind(this),
+            addList: this.setLists.bind(this)
+        };
 
-        //let addListProps = {
-        //    list: this.state.list,
-        //    setInputValue: this.setInputValue
-        //
-        //};
-        //
-        //
-        //
-        //console.log(...addListProps);
+        let showDelListProps = {
+            lists: this.state.lists,
+            delList: this.setLists.bind(this)
+        };
 
         return (
             <div className="row">
-                <AddList {...this.state} />
-                <ShowDelList {...this.state} />
+                <AddList  {...addListProps} />
+                <ShowDelList {...showDelListProps} />
             </div>
         );
     }
