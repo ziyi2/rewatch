@@ -1,19 +1,20 @@
-//like MVC's Model
-
+'use strict';
 import Event,{EventEmitter} from 'events';
 import assign from 'object-assign';
 
 
-//Store -> View
-let ListStore = assign({}, EventEmitter.prototype, {
-    items: [],
 
-    getAll() {
-        return this.items;
+
+//Store -> View
+var TodoStore = assign({}, EventEmitter.prototype, {
+    lists: [1,2],
+
+    getAllLists() {
+        return this.lists;
     },
 
-    addNewItemHandler(text) {
-        this.items.push(text);
+    addList(list) {
+        this.lists.push(list);
     },
 
     emitChange() {
@@ -29,4 +30,4 @@ let ListStore = assign({}, EventEmitter.prototype, {
     }
 });
 
-export default ListStore;
+export default TodoStore;

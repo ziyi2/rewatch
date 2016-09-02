@@ -156,7 +156,10 @@ n stable
 
 ## Flux
 
-
+- components    [View -> Action]
+- actions       [Action -> Dispatcher]
+- dispatcher    [Dispatcher -> callbacks(Store)]
+- stores        [Store -> View]
 
 
 
@@ -168,7 +171,7 @@ n stable
 ## 链接汇总
 
 ### 网站链接
-
+- [react](https://facebook.github.io/react/index.html)
 - [webpack](https://webpack.github.io/docs/)
 - [Using ES6 and ES7 in the Browser, with Babel 6 and Webpack:](http://www.tuicool.com/articles/fmUze2M)
 - [用 webpack 构建 node 后端代码，使其支持 js 新特性并实现热重载](http://www.tuicool.com/articles/zEZneuq)
@@ -181,5 +184,6 @@ n stable
 - [keithamus/parallelshell](https://github.com/keithamus/parallelshell)
 - [SudoPlz/react-marty-express-webpack-bootstrap-hotreloading-boilerplate-kit](https://github.com/SudoPlz/react-marty-express-webpack-bootstrap-hotreloading-boilerplate-kit)
 - [facebook/flux](https://github.com/facebook/flux)
+- [extremely-simple-flux-demo](https://github.com/ruanyf/extremely-simple-flux-demo)
 - [kriasoft/react-starter-kit](https://github.com/kriasoft/react-starter-kit)
 - [relax](https://github.com/relax/relax)

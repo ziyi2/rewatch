@@ -13,6 +13,7 @@ var fs = require('fs');
 
 var app = express();
 
+
 // view engine setup
 app.set('views', path.join(__dirname, 'view'));
 app.engine('.html',ejs.__express);
