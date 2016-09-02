@@ -177,6 +177,7 @@ n stable
 - [用 webpack 构建 node 后端代码，使其支持 js 新特性并实现热重载](http://www.tuicool.com/articles/zEZneuq)
 - [使用React、Node.js、MongoDB、Socket.IO开发一个角色投票应用](http://www.kancloud.cn/kancloud/create-voting-app/63976)
 - [Flux架构入门教程](http://www.ruanyifeng.com/blog/2016/01/flux.html)
+- [React Router 使用教程](http://www.ruanyifeng.com/blog/2016/05/react_router.html?utm_source=tool.lu)
 
 ### github链接
 
