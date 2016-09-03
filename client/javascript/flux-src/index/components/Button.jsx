@@ -1,32 +1,24 @@
-import React from 'react';
+'use strict';
+import React, {PropTypes} from 'react';
 
-//这里的Button是一个纯组件,不含任何状态,方便复用和测试
-//this.props.onClick是由上面的父组件传递
 
-class Button extends React.Component {
+export default class Button extends React.Component {
+
+    static propTypes = {
+        className: PropTypes.string.isRequired,
+        onClick: PropTypes.func.isRequired,
+        type: PropTypes.string.isRequired,
+        dataIndex: PropTypes.number
+    };
 
     render() {
-
+        const {type,className,onClick,dataIndex} = this.props;
 
         return (
-          <div class="row">
-              <ul className="list-group">
-              {
-                  this.props.items.map((item,index,items) => {
-                    return (
-                        <li className="list-group-item" key={index}>{item}</li>
-                    )
-                  })
-              }
-              </ul>
-
-              <button className="btn btn-default" onClick={this.props.onClick}>New Item</button>
-          </div>
+            <button type={type} className={className} onClick={onClick} data-index={dataIndex}>
+                {this.props.children}
+            </button>
         );
     }
 }
-
-export default Button;
-
-
 

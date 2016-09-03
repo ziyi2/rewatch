@@ -7,6 +7,9 @@ import TodoStore from '../stores/TodoStore';
 import TodoConstants,{_onChange,_addList} from '../constants/TodoConstants';
 
 export default class TodoApp extends React.Component {
+	constructor() {
+		super();
+	}
 
 	state = {
 		lists: TodoStore.getAllLists()
@@ -28,7 +31,7 @@ export default class TodoApp extends React.Component {
 	}
 
 	[_addList]() {
-		TodoHeadAction.addList('1');
+		TodoHeadAction.addList(1);
 	}
 
 
@@ -36,7 +39,7 @@ export default class TodoApp extends React.Component {
 
 		let headProps = {
 			lists: this.state.lists,
-			addList: this[_addList].bind(this)
+			addList: this[_addList]
 		};
 
 		let footerProps = {

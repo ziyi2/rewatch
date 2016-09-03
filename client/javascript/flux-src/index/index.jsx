@@ -1,9 +1,9 @@
+'use strict';
 //import 'babel-polyfill';
-
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ButtonController from './components/ButtonController';
+import TodoApp from './components/TodoApp';
 
 
-var button_flux = document.getElementById('button-flux');
-ReactDOM.render(<ButtonController/> , button_flux);
+var list_to_do_flux = document.getElementById('list-to-do-flux');
+ReactDOM.render(<TodoApp/> , list_to_do_flux);

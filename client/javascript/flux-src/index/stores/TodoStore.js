@@ -1,20 +1,33 @@
-//like MVC's Model
-
+'use strict';
 import Event,{EventEmitter} from 'events';
 import assign from 'object-assign';
 
 
 //Store -> View
 let ListStore = assign({}, EventEmitter.prototype, {
-    items: [],
+    lists: [],
+    list: "",
 
-    getAll() {
-        return this.items;
+    getAllLists() {
+        return this.lists;
     },
 
-    addNewItemHandler(text) {
-        this.items.push(text);
+    getList() {
+      return this.list
     },
+
+    setList(list) {
+       this.list = list;
+    },
+
+    addList(list) {
+        this.lists.push(list);
+    },
+
+    delList(index) {
+        this.lists.splice(index,1);
+    },
+
 
     emitChange() {
         this.emit('change');
