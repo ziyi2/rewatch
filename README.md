@@ -5,11 +5,17 @@
 开发环境启动方式
 
 ```javascript
-npm run dev
+npm run dev     //webpack
+npm start       //node app
 ```
 
+生产环境启动方式
 
-Make sure your server is running with `npm run dev` and then visit [http://localhost:3000](http://localhost:3000)
+```javascript
+npm run pro
+```
+
+Make sure your server is running then visit [http://localhost:3000](http://localhost:3000)
 
 >Tip: you should install `pm2` to manager the App's process, install `webpack-dev-server` to watch the files.
 

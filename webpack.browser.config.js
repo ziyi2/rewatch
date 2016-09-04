@@ -13,12 +13,13 @@ module.exports = {
     entry: {
         index: './client/javascript/none-flux-src/index/index.js',
         flux_index: './client/javascript/flux-src/index/index.jsx',
-        router_index: './client/javascript/router-src/index.jsx'
+        router_index: './client/javascript/router-browser-src/index.jsx',
+        router_server_index: './client/javascript/router-server-src/index.jsx'
         //flux_to_do_list_index: './client/javascript/flux-todoList-src/index/index.jsx'
     },
 
     output: {
-        path: './client/javascript/dist',
+        path: './public/js',
         filename: "[name].js",
         publicPath: '/'
     },
@@ -64,7 +65,12 @@ module.exports = {
         ]
     },
 
-    plugins: [commonsPlugin]   //打包多个入口文件时会提取出公用的部分，生成common.js
+    plugins: [
+        commonsPlugin
+        //new webpack.optimize.DedupePlugin(),
+        //new webpack.optimize.OccurrenceOrderPlugin(),
+        //new webpack.optimize.UglifyJsPlugin()
+    ]   //打包多个入口文件时会提取出公用的部分，生成common.js
 };
 
 

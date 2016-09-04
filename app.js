@@ -13,6 +13,8 @@ var fs = require('fs');
 
 var app = express();
 
+//var compression = require('compression');
+//app.use(compression());
 
 // view engine setup
 app.set('views', path.join(__dirname, 'view'));
@@ -25,7 +27,7 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'client')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 
 //react-router send all requests to index.html so browserHistory works
