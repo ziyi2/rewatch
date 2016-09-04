@@ -43,6 +43,15 @@ npm install react-router --save
 
 >Tip: see Example `client/javascript/router-src`
 
+
+服务器端渲染
+
+```javascript
+npm run webpack
+npm run start-server
+```
+
+
 ## Link
 
 ### website

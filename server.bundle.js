@@ -424,16 +424,6 @@
 	    }
 
 	    _createClass(Repos, [{
-	        key: 'handleSumbit',
-	        value: function handleSumbit(event) {
-	            event.preventDefault();
-	            var userName = event.target.elements[0].value;
-	            var repo = event.target.elements[1].value;
-	            var path = '/repos/' + userName + '/' + repo;
-	            //console.log(path);
-	            this.context.router.push(path);
-	        }
-	    }, {
 	        key: 'render',
 	        value: function render() {
 	            return _react2.default.createElement(
@@ -466,20 +456,6 @@
 	                        )
 	                    )
 	                ),
-	                _react2.default.createElement(
-	                    'form',
-	                    { action: '', className: 'form-inline', onSubmit: this.handleSumbit.bind(this) },
-	                    _react2.default.createElement('input', { type: 'text', className: 'form-control', placeholder: 'userName' }),
-	                    ' / ',
-	                    ' ',
-	                    _react2.default.createElement('input', { type: 'text', className: 'form-control', placeholder: 'repo' }),
-	                    ' ',
-	                    _react2.default.createElement(
-	                        'button',
-	                        { className: 'btn btn-default', type: 'submit' },
-	                        '提交'
-	                    )
-	                ),
 	                this.props.children
 	            );
 	        }
@@ -488,9 +464,6 @@
 	    return Repos;
 	}(_react2.default.Component);
 
-	Repos.contextTypes = {
-	    router: _react.PropTypes.object
-	};
 	exports.default = Repos;
 
 /***/ },
