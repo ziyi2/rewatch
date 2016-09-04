@@ -7,12 +7,15 @@ run the webpack
 ```javascript
 npm run dev
 ```
+>Tip: you should install pm2 to manager the app's process!
 
 run the App
 
 ```javacript
 npm start
 ```
+
+
 
 stop the App
 
@@ -22,13 +25,11 @@ npm stop
 
 ## React Flux
 
-install flux
-
 ```javascript
 npm install flux --save
 ```
 
->提示: see Example `client/javascript/flux-src`
+>Tip: see Example `client/javascript/flux-src`
 
 
 ## React Router
@@ -37,11 +38,11 @@ npm install flux --save
 npm install react-router --save
 ```
 
->提示: see Example `client/javascript/router-src`
+>Tip: see Example `client/javascript/router-src`
 
-## 链接汇总
+## Link
 
-### 网站链接
+### website
 - [react](https://facebook.github.io/react/index.html)
 - [webpack](https://webpack.github.io/docs/)
 - [Using ES6 and ES7 in the Browser, with Babel 6 and Webpack:](http://www.tuicool.com/articles/fmUze2M)
@@ -50,7 +51,7 @@ npm install react-router --save
 - [Flux架构入门教程](http://www.ruanyifeng.com/blog/2016/01/flux.html)
 - [React Router 使用教程](http://www.ruanyifeng.com/blog/2016/05/react_router.html?utm_source=tool.lu)
 
-### github链接
+### github
 
 - [webpack](https://github.com/webpack/webpack)
 - [keithamus/parallelshell](https://github.com/keithamus/parallelshell)
