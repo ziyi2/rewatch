@@ -7,7 +7,6 @@ run the webpack
 ```javascript
 npm run dev
 ```
->Tip: you should install pm2 to manager the app's process!
 
 run the App
 
@@ -15,6 +14,9 @@ run the App
 npm start
 ```
 
+Make sure your server is running with `npm start` and then visit [http://localhost:3000](http://localhost:3000)
+
+>Tip: you should install `pm2` to manager the App's process!
 
 
 stop the App
