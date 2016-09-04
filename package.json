@@ -3,10 +3,10 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+    "dev": "parallelshell \"npm run webpack-browser\" \"npm start\" ",
     "start": "pm2 start bin/www",
     "stop": "pm2 stop bin/www",
-    "dev": "parallelshell \"npm run webpack-browser\" ",
-    "webpack-browser": "webpack --config ./webpack/dev/webpack.browser.config.js --progress --watch --colors",
+    "webpack-browser": "webpack-dev-server --config ./webpack/dev/webpack.browser.config.js --inline --content-base client/javascript/dist --history-api-fallback",
     "webpack-node": "webpack --config ./webpack/dev/webpack.node.config.js --progress --watch --colors"
   },
   "dependencies": {

@@ -2,21 +2,16 @@
 
 ## Start
 
-run the webpack
+开发环境启动方式
 
 ```javascript
 npm run dev
 ```
 
-run the App
 
-```javacript
-npm start
-```
+Make sure your server is running with `npm run dev` and then visit [http://localhost:3000](http://localhost:3000)
 
-Make sure your server is running with `npm start` and then visit [http://localhost:3000](http://localhost:3000)
-
->Tip: you should install `pm2` to manager the App's process!
+>Tip: you should install `pm2` to manager the App's process, install `webpack-dev-server` to watch the files.
 
 
 stop the App

@@ -19,7 +19,8 @@ module.exports = {
 
     output: {
         path: './client/javascript/dist',
-        filename: "[name].js"
+        filename: "[name].js",
+        publicPath: '/'
     },
 
     externals: {    //使用自己带的库(需要在html中加载),遇到require的时候不用,只用全局变量
