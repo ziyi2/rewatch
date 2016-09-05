@@ -62,6 +62,9 @@ npm run start-server
 - [使用React、Node.js、MongoDB、Socket.IO开发一个角色投票应用](http://www.kancloud.cn/kancloud/create-voting-app/63976)
 - [Flux架构入门教程](http://www.ruanyifeng.com/blog/2016/01/flux.html)
 - [React Router 使用教程](http://www.ruanyifeng.com/blog/2016/05/react_router.html?utm_source=tool.lu)
+- [React Router 中文](http://react-guide.github.io/react-router-cn/docs/Introduction.html)
+
+
 
 ### github
 
@@ -74,3 +77,11 @@ npm run start-server
 - [relax](https://github.com/relax/relax)
 - [reactjs/react-router-tutorial](https://github.com/reactjs/react-router-tutorial/tree/master/lessons)
 - [reactjs/react-router-expamle](https://github.com/reactjs/react-router/tree/latest/examples)
+- [mhart/react-server-example](https://github.com/mhart/react-server-example)
+
+
+### Next...
+- [Redux中文文档](http://cn.redux.js.org/index.html)
+- [玩转React服务器端渲染](https://blog.coding.net/blog/React-server-rendering)
+- [这个可以研究一下react-router服务器端渲染](https://github.com/zjy01/react_and_redux_and_router_example)
+
