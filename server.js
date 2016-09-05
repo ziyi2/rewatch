@@ -11,7 +11,7 @@ import routes from './client/javascript/router-server-src/components/routes';
 var app = express();
 
 // serve our static stuff like index.css
-app.use(express.static(path.join(__dirname, 'public'), {index: false}))
+app.use(express.static(path.join(__dirname, 'public'), {index: false}));
 app.use(logger('dev'));
 
 
@@ -24,13 +24,13 @@ app.get('*', (req, res) => {
       res.redirect(redirect.pathname + redirect.search)
     } else if (props) {
       // hey we made it!
-      const appHtml = renderToString(<RouterContext {...props}/>)
+      const appHtml = renderToString(<RouterContext {...props}/>);
       res.send(renderPage(appHtml))
     } else {
       res.status(404).send('Not Found')
     }
   })
-})
+});
 
 function renderPage(appHtml) {
   return `
@@ -45,7 +45,7 @@ function renderPage(appHtml) {
    `
 }
 
-var PORT = process.env.PORT || 3000
+var PORT = process.env.PORT || 3000;
 app.listen(PORT, function() {
   console.log('Production Express server running at localhost:' + PORT)
-})
+});
