@@ -31,59 +31,59 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 //react-router send all requests to index.html so browserHistory works
-app.get('*', function (req, res) {
-  res.sendFile(path.join(__dirname, 'view', 'index.html'))
-});
+//app.get('*', function (req, res) {
+//  res.sendFile(path.join(__dirname, 'view', 'index.html'))
+//});
 
 
 
 //放弃了Express的路由
 
 //router list
-//var routes = fs.readdirSync('./server/routers');
-//for(var i in routes){
-//  var name = routes[i].replace('.js','');
-//  var route = '/' + routes[i].split('.')[0];
-//  var server = routes[i].split('.')[1];
-//  if(server === 'router'){          //需要注意屏蔽一些隐藏的文件
-//    app.use(route, require('./server/routers/'+ name));
-//  }
-//}
-//app.use('/', require('./server/routers/index.router')); //两个路由 /index和/都可以
+var routes = fs.readdirSync('./server/routers');
+for(var i in routes){
+  var name = routes[i].replace('.js','');
+  var route = '/' + routes[i].split('.')[0];
+  var server = routes[i].split('.')[1];
+  if(server === 'router'){          //需要注意屏蔽一些隐藏的文件
+    app.use(route, require('./server/routers/'+ name));
+  }
+}
+app.use('/', require('./server/routers/index.router')); //两个路由 /index和/都可以
 
 
 // catch 404 and forward to error handler
-//app.use(function(req, res, next) {
-//  var err = new Error('Not Found');
-//  err.status = 404;
-//  next(err);
-//});
-//
-//// error handlers
-//
-//// development error handler
-//// will print stacktrace
-//if (app.get('env') === 'development') {
-//  app.use(function(err, req, res, next) {
-//    res.status(err.status || 500);
-//    res.render('error', {
-//      title: 'error',
-//      message: err.message,
-//      error: err
-//    });
-//  });
-//}
+app.use(function(req, res, next) {
+  var err = new Error('Not Found');
+  err.status = 404;
+  next(err);
+});
+
+// error handlers
+
+// development error handler
+// will print stacktrace
+if (app.get('env') === 'development') {
+  app.use(function(err, req, res, next) {
+    res.status(err.status || 500);
+    res.render('error', {
+      title: 'error',
+      message: err.message,
+      error: err
+    });
+  });
+}
 
 // production error handler
 // no stacktraces leaked to user
-//app.use(function(err, req, res, next) {
-//  res.status(err.status || 500);
-//  res.render('error', {
-//    title: 'error',
-//    message: err.message,
-//    error: {}
-//  });
-//});
+app.use(function(err, req, res, next) {
+  res.status(err.status || 500);
+  res.render('error', {
+    title: 'error',
+    message: err.message,
+    error: {}
+  });
+});
 
 
 module.exports = app;
