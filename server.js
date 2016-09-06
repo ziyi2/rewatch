@@ -38,9 +38,10 @@ function renderPage(appHtml) {
     <html>
     <meta charset=utf-8/>
     <title>My First React Router App</title>
-    <link rel=stylesheet href=/index.css>
-     <link rel="stylesheet" href="/lib/bootstrap/bootstrap.min.css" type="text/css" media="all">
-    <div id=app>${appHtml}</div>
+    <link rel="stylesheet" href="/lib/bootstrap/bootstrap.min.css" type="text/css" media="all">
+    <div class=container>
+        <div id=app>${appHtml}</div>
+    </div>
     <script src="/js/router_server_index.js"></script>
    `
 }

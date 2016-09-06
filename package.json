@@ -13,13 +13,9 @@
     "webpack-node": "webpack --config ./webpack.node.config.js --progress --watch --colors",
 
 
-
     "..........router-server-render........": ".........",
     "webpack": "parallelshell \"npm run webpack-browser-dev\" \"npm run webpack-node\"",
     "start-server": "node server.bundle.js"
-
-
-
 
   },
   "dependencies": {
