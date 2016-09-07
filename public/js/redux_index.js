@@ -10,51 +10,40 @@ webpackJsonp([2],[
 
 	var _reactDom = __webpack_require__(2);
 
-	var _Counter = __webpack_require__(23);
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+
+	var _redux = __webpack_require__(23);
+
+	var _Counter = __webpack_require__(38);
 
 	var _Counter2 = _interopRequireDefault(_Counter);
 
-	var _redux = __webpack_require__(24);
+	var _counterReducer = __webpack_require__(39);
 
-	var _counter = __webpack_require__(39);
+	var _counterReducer2 = _interopRequireDefault(_counterReducer);
 
-	var _counter2 = _interopRequireDefault(_counter);
-
-	var _counter3 = __webpack_require__(41);
+	var _counterAction = __webpack_require__(41);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var store = (0, _redux.createStore)(_counter2.default); //第二参数用于设置state的初始状态
+	//ex.1
+	var store = (0, _redux.createStore)(_counterReducer2.default);
+	var rootEl = document.getElementById('react-redux');
 
-	//用于设置state的初始状体
-	//这对开发同构应用时非常有用，
-	//服务器端 redux 应用的 state 结构可以与客户端保持一致,
-	//那么客户端可以将从网络接收到的服务端 state
-	//直接用于本地数据初始化。
-	//let store = createStore(todoApp, window.STATE_FROM_SERVER)
-
-
-	//getState 获取
-	//dispatch 更新
-	//subscribe 注册监听器
-	//subscribe返回的函数 注销监听器
-
-	var react_redux = document.getElementById('react-redux');
-
-	function ren() {
-	    (0, _reactDom.render)()(_react2.default.createElement(_Counter2.default, {
+	function render() {
+	    _reactDom2.default.render(_react2.default.createElement(_Counter2.default, {
 	        value: store.getState(),
-	        add: function add() {
-	            return store.dispatch((0, _counter3.add)('add'));
+	        onIncrement: function onIncrement() {
+	            return store.dispatch((0, _counterAction.add)('add'));
 	        },
-	        del: function del() {
-	            return store.dispatch((0, _counter3.del)('del'));
+	        onDecrement: function onDecrement() {
+	            return store.dispatch((0, _counterAction.del)('del'));
 	        }
-	    }), react_redux);
+	    }), rootEl);
 	}
 
-	ren();
-	store.subscribe(ren);
+	render();
+	store.subscribe(render);
 
 /***/ },
 /* 1 */,
@@ -85,25 +74,40 @@ webpackJsonp([2],[
 	var cachedSetTimeout;
 	var cachedClearTimeout;
 
+	function defaultSetTimout() {
+	    throw new Error('setTimeout has not been defined');
+	}
+	function defaultClearTimeout () {
+	    throw new Error('clearTimeout has not been defined');
+	}
 	(function () {
 	    try {
-	        cachedSetTimeout = setTimeout;
-	    } catch (e) {
-	        cachedSetTimeout = function () {
-	            throw new Error('setTimeout is not defined');
+	        if (typeof setTimeout === 'function') {
+	            cachedSetTimeout = setTimeout;
+	        } else {
+	            cachedSetTimeout = defaultSetTimout;
 	        }
+	    } catch (e) {
+	        cachedSetTimeout = defaultSetTimout;
 	    }
 	    try {
-	        cachedClearTimeout = clearTimeout;
-	    } catch (e) {
-	        cachedClearTimeout = function () {
-	            throw new Error('clearTimeout is not defined');
+	        if (typeof clearTimeout === 'function') {
+	            cachedClearTimeout = clearTimeout;
+	        } else {
+	            cachedClearTimeout = defaultClearTimeout;
 	        }
+	    } catch (e) {
+	        cachedClearTimeout = defaultClearTimeout;
 	    }
 	} ())
 	function runTimeout(fun) {
 	    if (cachedSetTimeout === setTimeout) {
 	        //normal enviroments in sane situations
+	        return setTimeout(fun, 0);
+	    }
+	    // if setTimeout wasn't available but was latter defined
+	    if ((cachedSetTimeout === defaultSetTimout || !cachedSetTimeout) && setTimeout) {
+	        cachedSetTimeout = setTimeout;
 	        return setTimeout(fun, 0);
 	    }
 	    try {
@@ -124,6 +128,11 @@ webpackJsonp([2],[
 	function runClearTimeout(marker) {
 	    if (cachedClearTimeout === clearTimeout) {
 	        //normal enviroments in sane situations
+	        return clearTimeout(marker);
+	    }
+	    // if clearTimeout wasn't available but was latter defined
+	    if ((cachedClearTimeout === defaultClearTimeout || !cachedClearTimeout) && clearTimeout) {
+	        cachedClearTimeout = clearTimeout;
 	        return clearTimeout(marker);
 	    }
 	    try {
@@ -247,135 +256,32 @@ webpackJsonp([2],[
 /* 23 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var Counter = function (_Component) {
-	    _inherits(Counter, _Component);
-
-	    function Counter(props) {
-	        _classCallCheck(this, Counter);
-
-	        var _this = _possibleConstructorReturn(this, (Counter.__proto__ || Object.getPrototypeOf(Counter)).call(this, props));
-
-	        _this.incrementAsync = _this.incrementAsync.bind(_this);
-	        _this.incrementIfOdd = _this.incrementIfOdd.bind(_this);
-	        return _this;
-	    }
-
-	    _createClass(Counter, [{
-	        key: 'incrementIfOdd',
-	        value: function incrementIfOdd() {
-	            if (this.props.value % 2 !== 0) {
-	                this.props.add();
-	            }
-	        }
-	    }, {
-	        key: 'incrementAsync',
-	        value: function incrementAsync() {
-	            setTimeout(this.props.add, 1000);
-	        }
-	    }, {
-	        key: 'render',
-	        value: function render() {
-	            var _props = this.props;
-	            var value = _props.value;
-	            var add = _props.add;
-	            var del = _props.del;
-
-	            return _react2.default.createElement(
-	                'p',
-	                null,
-	                'Clicked: ',
-	                value,
-	                ' times',
-	                ' ',
-	                _react2.default.createElement(
-	                    'button',
-	                    { onClick: add },
-	                    '+'
-	                ),
-	                ' ',
-	                _react2.default.createElement(
-	                    'button',
-	                    { onClick: del },
-	                    '-'
-	                ),
-	                ' ',
-	                _react2.default.createElement(
-	                    'button',
-	                    { onClick: this.incrementIfOdd },
-	                    'Increment if odd'
-	                ),
-	                ' ',
-	                _react2.default.createElement(
-	                    'button',
-	                    { onClick: this.incrementAsync },
-	                    'Increment async'
-	                )
-	            );
-	        }
-	    }]);
-
-	    return Counter;
-	}(_react.Component);
-
-	exports.default = Counter;
-
-
-	Counter.propTypes = {
-	    value: _react.PropTypes.number.isRequired,
-	    onIncrement: _react.PropTypes.func.isRequired,
-	    onDecrement: _react.PropTypes.func.isRequired
-	};
-
-/***/ },
-/* 24 */
-/***/ function(module, exports, __webpack_require__) {
-
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
 
 	exports.__esModule = true;
 	exports.compose = exports.applyMiddleware = exports.bindActionCreators = exports.combineReducers = exports.createStore = undefined;
 
-	var _createStore = __webpack_require__(25);
+	var _createStore = __webpack_require__(24);
 
 	var _createStore2 = _interopRequireDefault(_createStore);
 
-	var _combineReducers = __webpack_require__(34);
+	var _combineReducers = __webpack_require__(33);
 
 	var _combineReducers2 = _interopRequireDefault(_combineReducers);
 
-	var _bindActionCreators = __webpack_require__(36);
+	var _bindActionCreators = __webpack_require__(35);
 
 	var _bindActionCreators2 = _interopRequireDefault(_bindActionCreators);
 
-	var _applyMiddleware = __webpack_require__(37);
+	var _applyMiddleware = __webpack_require__(36);
 
 	var _applyMiddleware2 = _interopRequireDefault(_applyMiddleware);
 
-	var _compose = __webpack_require__(38);
+	var _compose = __webpack_require__(37);
 
 	var _compose2 = _interopRequireDefault(_compose);
 
-	var _warning = __webpack_require__(35);
+	var _warning = __webpack_require__(34);
 
 	var _warning2 = _interopRequireDefault(_warning);
 
@@ -399,7 +305,7 @@ webpackJsonp([2],[
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(15)))
 
 /***/ },
-/* 25 */
+/* 24 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -408,11 +314,11 @@ webpackJsonp([2],[
 	exports.ActionTypes = undefined;
 	exports['default'] = createStore;
 
-	var _isPlainObject = __webpack_require__(26);
+	var _isPlainObject = __webpack_require__(25);
 
 	var _isPlainObject2 = _interopRequireDefault(_isPlainObject);
 
-	var _symbolObservable = __webpack_require__(31);
+	var _symbolObservable = __webpack_require__(30);
 
 	var _symbolObservable2 = _interopRequireDefault(_symbolObservable);
 
@@ -665,12 +571,12 @@ webpackJsonp([2],[
 	}
 
 /***/ },
-/* 26 */
+/* 25 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var getPrototype = __webpack_require__(27),
-	    isHostObject = __webpack_require__(29),
-	    isObjectLike = __webpack_require__(30);
+	var getPrototype = __webpack_require__(26),
+	    isHostObject = __webpack_require__(28),
+	    isObjectLike = __webpack_require__(29);
 
 	/** `Object#toString` result references. */
 	var objectTag = '[object Object]';
@@ -741,10 +647,10 @@ webpackJsonp([2],[
 
 
 /***/ },
-/* 27 */
+/* 26 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var overArg = __webpack_require__(28);
+	var overArg = __webpack_require__(27);
 
 	/** Built-in value references. */
 	var getPrototype = overArg(Object.getPrototypeOf, Object);
@@ -753,7 +659,7 @@ webpackJsonp([2],[
 
 
 /***/ },
-/* 28 */
+/* 27 */
 /***/ function(module, exports) {
 
 	/**
@@ -774,7 +680,7 @@ webpackJsonp([2],[
 
 
 /***/ },
-/* 29 */
+/* 28 */
 /***/ function(module, exports) {
 
 	/**
@@ -800,7 +706,7 @@ webpackJsonp([2],[
 
 
 /***/ },
-/* 30 */
+/* 29 */
 /***/ function(module, exports) {
 
 	/**
@@ -835,14 +741,14 @@ webpackJsonp([2],[
 
 
 /***/ },
-/* 31 */
+/* 30 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(32);
+	module.exports = __webpack_require__(31);
 
 
 /***/ },
-/* 32 */
+/* 31 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {'use strict';
@@ -851,7 +757,7 @@ webpackJsonp([2],[
 		value: true
 	});
 
-	var _ponyfill = __webpack_require__(33);
+	var _ponyfill = __webpack_require__(32);
 
 	var _ponyfill2 = _interopRequireDefault(_ponyfill);
 
@@ -870,7 +776,7 @@ webpackJsonp([2],[
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ },
-/* 33 */
+/* 32 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -898,7 +804,7 @@ webpackJsonp([2],[
 	};
 
 /***/ },
-/* 34 */
+/* 33 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -906,13 +812,13 @@ webpackJsonp([2],[
 	exports.__esModule = true;
 	exports['default'] = combineReducers;
 
-	var _createStore = __webpack_require__(25);
+	var _createStore = __webpack_require__(24);
 
-	var _isPlainObject = __webpack_require__(26);
+	var _isPlainObject = __webpack_require__(25);
 
 	var _isPlainObject2 = _interopRequireDefault(_isPlainObject);
 
-	var _warning = __webpack_require__(35);
+	var _warning = __webpack_require__(34);
 
 	var _warning2 = _interopRequireDefault(_warning);
 
@@ -1046,7 +952,7 @@ webpackJsonp([2],[
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(15)))
 
 /***/ },
-/* 35 */
+/* 34 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -1076,7 +982,7 @@ webpackJsonp([2],[
 	}
 
 /***/ },
-/* 36 */
+/* 35 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -1132,7 +1038,7 @@ webpackJsonp([2],[
 	}
 
 /***/ },
-/* 37 */
+/* 36 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1143,7 +1049,7 @@ webpackJsonp([2],[
 
 	exports['default'] = applyMiddleware;
 
-	var _compose = __webpack_require__(38);
+	var _compose = __webpack_require__(37);
 
 	var _compose2 = _interopRequireDefault(_compose);
 
@@ -1195,7 +1101,7 @@ webpackJsonp([2],[
 	}
 
 /***/ },
-/* 38 */
+/* 37 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -1238,6 +1144,108 @@ webpackJsonp([2],[
 	}
 
 /***/ },
+/* 38 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Counter = function (_Component) {
+	    _inherits(Counter, _Component);
+
+	    function Counter(props) {
+	        _classCallCheck(this, Counter);
+
+	        var _this = _possibleConstructorReturn(this, (Counter.__proto__ || Object.getPrototypeOf(Counter)).call(this, props));
+
+	        _this.incrementAsync = _this.incrementAsync.bind(_this);
+	        _this.incrementIfOdd = _this.incrementIfOdd.bind(_this);
+	        return _this;
+	    }
+
+	    _createClass(Counter, [{
+	        key: 'incrementIfOdd',
+	        value: function incrementIfOdd() {
+	            if (this.props.value % 2 !== 0) {
+	                this.props.onIncrement();
+	            }
+	        }
+	    }, {
+	        key: 'incrementAsync',
+	        value: function incrementAsync() {
+	            setTimeout(this.props.onIncrement, 1000);
+	        }
+	    }, {
+	        key: 'render',
+	        value: function render() {
+	            var _props = this.props;
+	            var value = _props.value;
+	            var onIncrement = _props.onIncrement;
+	            var onDecrement = _props.onDecrement;
+
+	            return _react2.default.createElement(
+	                'p',
+	                null,
+	                'Clicked: ',
+	                value,
+	                ' times',
+	                ' ',
+	                _react2.default.createElement(
+	                    'button',
+	                    { onClick: onIncrement },
+	                    '+'
+	                ),
+	                ' ',
+	                _react2.default.createElement(
+	                    'button',
+	                    { onClick: onDecrement },
+	                    '-'
+	                ),
+	                ' ',
+	                _react2.default.createElement(
+	                    'button',
+	                    { onClick: this.incrementIfOdd },
+	                    'Increment if odd'
+	                ),
+	                ' ',
+	                _react2.default.createElement(
+	                    'button',
+	                    { onClick: this.incrementAsync },
+	                    'Increment async'
+	                )
+	            );
+	        }
+	    }]);
+
+	    return Counter;
+	}(_react.Component);
+
+	Counter.propTypes = {
+	    value: _react.PropTypes.number.isRequired,
+	    onIncrement: _react.PropTypes.func.isRequired,
+	    onDecrement: _react.PropTypes.func.isRequired
+	};
+
+	exports.default = Counter;
+
+/***/ },
 /* 39 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -1256,8 +1264,10 @@ webpackJsonp([2],[
 
 	    switch (action.type) {
 	        case _counter.ADD:
+	            console.log(action.text);
 	            return state + 1;
 	        case _counter.DEL:
+	            console.log(action.text);
 	            return state - 1;
 	        default:
 	            return state;
