@@ -51,6 +51,13 @@ npm run webpack
 npm run start-server
 ```
 
+## React Redux
+
+```javascript
+npm install react-redux redux --save
+```
+>Tip: see Example `client/javascript/redux-src`
+
 
 ## Link
 
