@@ -71,6 +71,7 @@ var react_router = document.getElementById('react-router');
 render((
     <Router history={browserHistory}>
         <Route path='/' component={App}>
+            
             <IndexRoute component={Index} />
             <Route path='/home' component={Home}  />
             <Route path='/about' component={About}  />

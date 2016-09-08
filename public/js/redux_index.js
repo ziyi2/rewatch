@@ -1,5 +1,6 @@
-webpackJsonp([2],[
-/* 0 */
+webpackJsonp([5],{
+
+/***/ 0:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -12,23 +13,23 @@ webpackJsonp([2],[
 
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 
-	var _redux = __webpack_require__(23);
+	var _redux = __webpack_require__(99);
 
-	var _Counter = __webpack_require__(38);
+	var _Counter = __webpack_require__(114);
 
 	var _Counter2 = _interopRequireDefault(_Counter);
 
-	var _counterReducer = __webpack_require__(39);
+	var _counterReducer = __webpack_require__(115);
 
 	var _counterReducer2 = _interopRequireDefault(_counterReducer);
 
-	var _counterAction = __webpack_require__(41);
+	var _counterAction = __webpack_require__(117);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	//ex.1
 	var store = (0, _redux.createStore)(_counterReducer2.default);
-	var rootEl = document.getElementById('react-redux');
+	var react_redux_counter = document.getElementById('react-redux-counter');
 
 	function render() {
 	    _reactDom2.default.render(_react2.default.createElement(_Counter2.default, {
@@ -39,28 +40,15 @@ webpackJsonp([2],[
 	        onDecrement: function onDecrement() {
 	            return store.dispatch((0, _counterAction.del)('del'));
 	        }
-	    }), rootEl);
+	    }), react_redux_counter);
 	}
 
 	render();
 	store.subscribe(render);
 
 /***/ },
-/* 1 */,
-/* 2 */,
-/* 3 */,
-/* 4 */,
-/* 5 */,
-/* 6 */,
-/* 7 */,
-/* 8 */,
-/* 9 */,
-/* 10 */,
-/* 11 */,
-/* 12 */,
-/* 13 */,
-/* 14 */,
-/* 15 */
+
+/***/ 15:
 /***/ function(module, exports) {
 
 	// shim for using process in browser
@@ -246,14 +234,8 @@ webpackJsonp([2],[
 
 
 /***/ },
-/* 16 */,
-/* 17 */,
-/* 18 */,
-/* 19 */,
-/* 20 */,
-/* 21 */,
-/* 22 */,
-/* 23 */
+
+/***/ 99:
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -261,27 +243,27 @@ webpackJsonp([2],[
 	exports.__esModule = true;
 	exports.compose = exports.applyMiddleware = exports.bindActionCreators = exports.combineReducers = exports.createStore = undefined;
 
-	var _createStore = __webpack_require__(24);
+	var _createStore = __webpack_require__(100);
 
 	var _createStore2 = _interopRequireDefault(_createStore);
 
-	var _combineReducers = __webpack_require__(33);
+	var _combineReducers = __webpack_require__(109);
 
 	var _combineReducers2 = _interopRequireDefault(_combineReducers);
 
-	var _bindActionCreators = __webpack_require__(35);
+	var _bindActionCreators = __webpack_require__(111);
 
 	var _bindActionCreators2 = _interopRequireDefault(_bindActionCreators);
 
-	var _applyMiddleware = __webpack_require__(36);
+	var _applyMiddleware = __webpack_require__(112);
 
 	var _applyMiddleware2 = _interopRequireDefault(_applyMiddleware);
 
-	var _compose = __webpack_require__(37);
+	var _compose = __webpack_require__(113);
 
 	var _compose2 = _interopRequireDefault(_compose);
 
-	var _warning = __webpack_require__(34);
+	var _warning = __webpack_require__(110);
 
 	var _warning2 = _interopRequireDefault(_warning);
 
@@ -305,7 +287,8 @@ webpackJsonp([2],[
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(15)))
 
 /***/ },
-/* 24 */
+
+/***/ 100:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -314,11 +297,11 @@ webpackJsonp([2],[
 	exports.ActionTypes = undefined;
 	exports['default'] = createStore;
 
-	var _isPlainObject = __webpack_require__(25);
+	var _isPlainObject = __webpack_require__(101);
 
 	var _isPlainObject2 = _interopRequireDefault(_isPlainObject);
 
-	var _symbolObservable = __webpack_require__(30);
+	var _symbolObservable = __webpack_require__(106);
 
 	var _symbolObservable2 = _interopRequireDefault(_symbolObservable);
 
@@ -571,12 +554,13 @@ webpackJsonp([2],[
 	}
 
 /***/ },
-/* 25 */
+
+/***/ 101:
 /***/ function(module, exports, __webpack_require__) {
 
-	var getPrototype = __webpack_require__(26),
-	    isHostObject = __webpack_require__(28),
-	    isObjectLike = __webpack_require__(29);
+	var getPrototype = __webpack_require__(102),
+	    isHostObject = __webpack_require__(104),
+	    isObjectLike = __webpack_require__(105);
 
 	/** `Object#toString` result references. */
 	var objectTag = '[object Object]';
@@ -647,10 +631,11 @@ webpackJsonp([2],[
 
 
 /***/ },
-/* 26 */
+
+/***/ 102:
 /***/ function(module, exports, __webpack_require__) {
 
-	var overArg = __webpack_require__(27);
+	var overArg = __webpack_require__(103);
 
 	/** Built-in value references. */
 	var getPrototype = overArg(Object.getPrototypeOf, Object);
@@ -659,7 +644,8 @@ webpackJsonp([2],[
 
 
 /***/ },
-/* 27 */
+
+/***/ 103:
 /***/ function(module, exports) {
 
 	/**
@@ -680,7 +666,8 @@ webpackJsonp([2],[
 
 
 /***/ },
-/* 28 */
+
+/***/ 104:
 /***/ function(module, exports) {
 
 	/**
@@ -706,7 +693,8 @@ webpackJsonp([2],[
 
 
 /***/ },
-/* 29 */
+
+/***/ 105:
 /***/ function(module, exports) {
 
 	/**
@@ -741,14 +729,16 @@ webpackJsonp([2],[
 
 
 /***/ },
-/* 30 */
+
+/***/ 106:
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(31);
+	module.exports = __webpack_require__(107);
 
 
 /***/ },
-/* 31 */
+
+/***/ 107:
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {'use strict';
@@ -757,7 +747,7 @@ webpackJsonp([2],[
 		value: true
 	});
 
-	var _ponyfill = __webpack_require__(32);
+	var _ponyfill = __webpack_require__(108);
 
 	var _ponyfill2 = _interopRequireDefault(_ponyfill);
 
@@ -776,7 +766,8 @@ webpackJsonp([2],[
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ },
-/* 32 */
+
+/***/ 108:
 /***/ function(module, exports) {
 
 	'use strict';
@@ -804,7 +795,8 @@ webpackJsonp([2],[
 	};
 
 /***/ },
-/* 33 */
+
+/***/ 109:
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -812,13 +804,13 @@ webpackJsonp([2],[
 	exports.__esModule = true;
 	exports['default'] = combineReducers;
 
-	var _createStore = __webpack_require__(24);
+	var _createStore = __webpack_require__(100);
 
-	var _isPlainObject = __webpack_require__(25);
+	var _isPlainObject = __webpack_require__(101);
 
 	var _isPlainObject2 = _interopRequireDefault(_isPlainObject);
 
-	var _warning = __webpack_require__(34);
+	var _warning = __webpack_require__(110);
 
 	var _warning2 = _interopRequireDefault(_warning);
 
@@ -952,7 +944,8 @@ webpackJsonp([2],[
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(15)))
 
 /***/ },
-/* 34 */
+
+/***/ 110:
 /***/ function(module, exports) {
 
 	'use strict';
@@ -982,7 +975,8 @@ webpackJsonp([2],[
 	}
 
 /***/ },
-/* 35 */
+
+/***/ 111:
 /***/ function(module, exports) {
 
 	'use strict';
@@ -1038,7 +1032,8 @@ webpackJsonp([2],[
 	}
 
 /***/ },
-/* 36 */
+
+/***/ 112:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1049,7 +1044,7 @@ webpackJsonp([2],[
 
 	exports['default'] = applyMiddleware;
 
-	var _compose = __webpack_require__(37);
+	var _compose = __webpack_require__(113);
 
 	var _compose2 = _interopRequireDefault(_compose);
 
@@ -1101,7 +1096,8 @@ webpackJsonp([2],[
 	}
 
 /***/ },
-/* 37 */
+
+/***/ 113:
 /***/ function(module, exports) {
 
 	"use strict";
@@ -1144,7 +1140,8 @@ webpackJsonp([2],[
 	}
 
 /***/ },
-/* 38 */
+
+/***/ 114:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1246,7 +1243,8 @@ webpackJsonp([2],[
 	exports.default = Counter;
 
 /***/ },
-/* 39 */
+
+/***/ 115:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1256,7 +1254,7 @@ webpackJsonp([2],[
 	});
 	exports.default = counter;
 
-	var _counter = __webpack_require__(40);
+	var _counter = __webpack_require__(116);
 
 	function counter() {
 	    var state = arguments.length <= 0 || arguments[0] === undefined ? 0 : arguments[0];
@@ -1275,7 +1273,8 @@ webpackJsonp([2],[
 	}
 
 /***/ },
-/* 40 */
+
+/***/ 116:
 /***/ function(module, exports) {
 
 	'use strict';
@@ -1287,7 +1286,8 @@ webpackJsonp([2],[
 	var DEL = exports.DEL = 'DELETE';
 
 /***/ },
-/* 41 */
+
+/***/ 117:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1298,7 +1298,7 @@ webpackJsonp([2],[
 	exports.add = add;
 	exports.del = del;
 
-	var _counter = __webpack_require__(40);
+	var _counter = __webpack_require__(116);
 
 	function add(text) {
 	    return {
@@ -1315,4 +1315,5 @@ webpackJsonp([2],[
 	}
 
 /***/ }
-]);
+
+});
