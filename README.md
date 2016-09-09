@@ -82,7 +82,9 @@ npm install react-redux redux --save
 - [react-router-tutorial](https://github.com/reactjs/react-router-tutorial/tree/master/lessons)
 - [react-router-expamle](https://github.com/reactjs/react-router/tree/latest/examples)
 - [redux](https://github.com/reactjs/redux)
-- [redux-tutorial](https://github.com/happypoulp/redux-tutorial/)
+- [redux-tutorial](https://github.com/react-guide/redux-tutorial-cn)
+- [react-redux-tutorial](https://github.com/lewis617/react-redux-tutorial)
+
 
 
 #### Project

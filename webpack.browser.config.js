@@ -16,7 +16,7 @@ module.exports = {
         router_index: './client/javascript/router-browser-src/index.jsx',
         router_server_index: './client/javascript/router-server-src/index.jsx',
         redux_index: './client/javascript/redux-src/counter/index.jsx',
-        redex_index_todos: './client/javascriot/redux-src/todos/index.jsx'
+        redux_index_todos: './client/javascript/redux-src/todos/index.jsx'
         //flux_to_do_list_index: './client/javascript/flux-todoList-src/index/index.jsx'
     },
 
