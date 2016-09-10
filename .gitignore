@@ -12,3 +12,5 @@ client/bowerLib/*
 client/javascript/dist/*
 !client/javascript/dist/dist.md
 
+#Npm debug
+npm-debug.log

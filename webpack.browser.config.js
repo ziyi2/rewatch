@@ -16,7 +16,8 @@ module.exports = {
         router_index: './client/javascript/router-browser-src/index.jsx',
         router_server_index: './client/javascript/router-server-src/index.jsx',
         redux_index: './client/javascript/redux-src/counter/index.jsx',
-        redux_index_todos: './client/javascript/redux-src/todos/index.jsx'
+        redux_index_todos: './client/javascript/redux-src/todos/index.jsx',
+        redux_index_todos_example: './client/javascript/redux-src/todos-example/index.js'
         //flux_to_do_list_index: './client/javascript/flux-todoList-src/index/index.jsx'
     },
 
@@ -61,7 +62,7 @@ module.exports = {
                 loader: 'babel-loader',
                 query: {
                     //plugins: ['babel-plugin-transform-runtime'],  //此项虽然对于编译代码非常有些帮助,但是会产生额外的重复负担代码
-                    presets:['es2015','stage-0','react']  //此项可以省略而是添加在.babelrc文件,但是官方建议保留在这里
+                    presets:['es2015','stage-0','stage-2','react']  //此项可以省略而是添加在.babelrc文件,但是官方建议保留在这里
                 }
             }
         ]
