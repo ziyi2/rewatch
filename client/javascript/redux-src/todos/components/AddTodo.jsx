@@ -22,7 +22,7 @@ export default class AddTodo extends Component {
 		return (
 			<div className="row">
 				<form className="form-line" onSubmit={this.handleSubmit.bind(this)}>
-					<input className='form-control' type="text" ref='input' />
+					<input className='form-control'  placeholder="请输入项" type="text" ref='input' />
 					<button type='submit' className='btn btn-default'>添加</button>	
 				</form>
 			</div>
@@ -65,17 +65,53 @@ export default class AddTodo extends Component {
 //connect 函数不会修改传入的 React 组件，返回的是一个新的已与 Redux store 连接的组件，而且你应该使用这个新组件
 //mapStateToProps 函数接收整个 Redux store 的 state 作为 props，然后返回一个传入到组件 props 的对象。该函数被称之为 selector
 
-
+//情况一
 //只注入 dispatch，不监听 store!!!
 //最好在多个组件上使用 connect()，每个组件只监听它所关联的部分 state
-
 //这里的组件是不会变化的,所以不需要监听state的变化
-
-
-
 // AddTodo = connect()(AddTodo);  
 // export default AddTodo;
 
+//情况二
+//注意
+//不要这样做！这会导致每次 action 都触发整个 TodoApp 重新渲染，
+//你做的所有性能优化都将付之东流。
+//export default connect(state => state)(TodoApp);
+
+
+
+//情况三
+//注入 dispatch 和 todos
+//function mapStateToProps(state) {
+//   return { todos: state.todos };
+// }
+
+// export default connect(mapStateToProps)(TodoApp);
+
+//情况四
+// 注入 todos 和所有 action creator (addTodo, completeTodo, ...)
+// import * as actionCreators from './actionCreators';
+
+// function mapStateToProps(state) {
+//   return { todos: state.todos };
+// }
+
+// export default connect(mapStateToProps, actionCreators)(TodoApp);
+
+//情况五
+//注入 todos 和指定的 action creator (addTodo)
+// import { addTodo } from './actionCreators';
+// import { bindActionCreators } from 'redux';
+
+// function mapStateToProps(state) {
+//   return { todos: state.todos };
+// }
+
+// function mapDispatchToProps(dispatch) {
+//   return bindActionCreators({ addTodo }, dispatch);
+// }
+
+// export default connect(mapStateToProps, mapDispatchToProps)(TodoApp);
 
 
 

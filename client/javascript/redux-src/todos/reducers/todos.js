@@ -3,20 +3,29 @@ import assign from 'object-assign';
 const todo = (state, action) => {
 	switch (action.type) {
 		case 'ADD_TODO':
+			console.log('ADD_TODO:2');
 		  	return {
 		  		id: action.id,
 		  		text: action.text,
 		  		completed: false
 		  	};
 
-		case 'TOGGLE_TODO':
+		case 'TOOGLE_TODO':
+			console.log('TOGGLE_TODO:2');
+			console.log('state:', state);
 			if(state.id !== action.id) {
 				return state;
 			}
 
-			return assign({},state,{
+			// return assign({},state,{
+			// 	completed: !state.completed
+			// });
+			// ES7 stage-2 redux-native已经大胆使用,所以放心吧
+			console.log('state change completed:', state);
+			return {
+				...state,
 				completed: !state.completed
-			});
+			}
 
 		default:
 			return state;  		
@@ -36,13 +45,15 @@ const todos = (state = [], action) => { 	//state是一个数组对象,里面都�
 
 	switch(action.type) {
 		case 'ADD_TODO':
+			console.log('ADD_TODO:1');
 			return [						//当 state 变化时需要返回全新的对象，而不是修改传入的参数。
 				...state,
 				todo(undefined,action)
 			];
 
-		case 'TOGGLE_TODO':
-			return state.map(t => todo(t,action))
+		case 'TOOGLE_TODO':
+			console.log('TOOGLE_TODO:1');
+			return state.map(t => todo(t,action));
 
 		default:
 			return state;

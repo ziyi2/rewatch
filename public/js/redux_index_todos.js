@@ -1,6 +1,5 @@
-webpackJsonp([3],{
-
-/***/ 0:
+webpackJsonp([3],[
+/* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -19,7 +18,7 @@ webpackJsonp([3],{
 
 	var _App2 = _interopRequireDefault(_App);
 
-	var _reducers = __webpack_require__(53);
+	var _reducers = __webpack_require__(58);
 
 	var _reducers2 = _interopRequireDefault(_reducers);
 
@@ -39,8 +38,26 @@ webpackJsonp([3],{
 
 	// 测试的时候用
 	store.subscribe(function () {
-		return console.log(store.getState());
+		return console.log('index.jsx  store.getState():', store.getState());
 	});
+
+	/*
+	{
+		todos: [
+		{
+			completed:false,
+			id:0,
+			text:'42314123'
+		}
+		{
+			completed:false,
+			id:1,
+			text:'42314123'
+		}
+		],
+		visibilityFilter:'SHOW_ALL'
+	}
+	 */
 
 	// 改变内部 state 惟一方法是 dispatch 一个 action。
 	// action 可以被序列化，用日记记录和储存下来，后期还可以以回放的方式执行
@@ -101,8 +118,13 @@ webpackJsonp([3],{
 	), react_redux_todos);
 
 /***/ },
-
-/***/ 7:
+/* 1 */,
+/* 2 */,
+/* 3 */,
+/* 4 */,
+/* 5 */,
+/* 6 */,
+/* 7 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -191,8 +213,14 @@ webpackJsonp([3],{
 
 
 /***/ },
-
-/***/ 15:
+/* 8 */,
+/* 9 */,
+/* 10 */,
+/* 11 */,
+/* 12 */,
+/* 13 */,
+/* 14 */,
+/* 15 */
 /***/ function(module, exports) {
 
 	// shim for using process in browser
@@ -378,8 +406,14 @@ webpackJsonp([3],{
 
 
 /***/ },
-
-/***/ 23:
+/* 16 */,
+/* 17 */,
+/* 18 */,
+/* 19 */,
+/* 20 */,
+/* 21 */,
+/* 22 */,
+/* 23 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -431,8 +465,7 @@ webpackJsonp([3],{
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(15)))
 
 /***/ },
-
-/***/ 24:
+/* 24 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -698,8 +731,7 @@ webpackJsonp([3],{
 	}
 
 /***/ },
-
-/***/ 25:
+/* 25 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var getPrototype = __webpack_require__(26),
@@ -775,8 +807,7 @@ webpackJsonp([3],{
 
 
 /***/ },
-
-/***/ 26:
+/* 26 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var overArg = __webpack_require__(27);
@@ -788,8 +819,7 @@ webpackJsonp([3],{
 
 
 /***/ },
-
-/***/ 27:
+/* 27 */
 /***/ function(module, exports) {
 
 	/**
@@ -810,8 +840,7 @@ webpackJsonp([3],{
 
 
 /***/ },
-
-/***/ 28:
+/* 28 */
 /***/ function(module, exports) {
 
 	/**
@@ -837,8 +866,7 @@ webpackJsonp([3],{
 
 
 /***/ },
-
-/***/ 29:
+/* 29 */
 /***/ function(module, exports) {
 
 	/**
@@ -873,16 +901,14 @@ webpackJsonp([3],{
 
 
 /***/ },
-
-/***/ 30:
+/* 30 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__(31);
 
 
 /***/ },
-
-/***/ 31:
+/* 31 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {'use strict';
@@ -910,8 +936,7 @@ webpackJsonp([3],{
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ },
-
-/***/ 32:
+/* 32 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -939,8 +964,7 @@ webpackJsonp([3],{
 	};
 
 /***/ },
-
-/***/ 33:
+/* 33 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -1088,8 +1112,7 @@ webpackJsonp([3],{
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(15)))
 
 /***/ },
-
-/***/ 34:
+/* 34 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -1119,8 +1142,7 @@ webpackJsonp([3],{
 	}
 
 /***/ },
-
-/***/ 35:
+/* 35 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -1176,8 +1198,7 @@ webpackJsonp([3],{
 	}
 
 /***/ },
-
-/***/ 36:
+/* 36 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1240,8 +1261,7 @@ webpackJsonp([3],{
 	}
 
 /***/ },
-
-/***/ 37:
+/* 37 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -1284,8 +1304,11 @@ webpackJsonp([3],{
 	}
 
 /***/ },
-
-/***/ 42:
+/* 38 */,
+/* 39 */,
+/* 40 */,
+/* 41 */,
+/* 42 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1307,8 +1330,7 @@ webpackJsonp([3],{
 	exports.connect = _connect2["default"];
 
 /***/ },
-
-/***/ 43:
+/* 43 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -1392,8 +1414,7 @@ webpackJsonp([3],{
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(15)))
 
 /***/ },
-
-/***/ 44:
+/* 44 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1409,8 +1430,7 @@ webpackJsonp([3],{
 	});
 
 /***/ },
-
-/***/ 45:
+/* 45 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -1439,8 +1459,7 @@ webpackJsonp([3],{
 	}
 
 /***/ },
-
-/***/ 46:
+/* 46 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -1839,8 +1858,7 @@ webpackJsonp([3],{
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(15)))
 
 /***/ },
-
-/***/ 47:
+/* 47 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -1871,8 +1889,7 @@ webpackJsonp([3],{
 	}
 
 /***/ },
-
-/***/ 48:
+/* 48 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1889,8 +1906,7 @@ webpackJsonp([3],{
 	}
 
 /***/ },
-
-/***/ 49:
+/* 49 */
 /***/ function(module, exports) {
 
 	/**
@@ -1946,8 +1962,7 @@ webpackJsonp([3],{
 
 
 /***/ },
-
-/***/ 50:
+/* 50 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -2005,8 +2020,7 @@ webpackJsonp([3],{
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(15)))
 
 /***/ },
-
-/***/ 51:
+/* 51 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2025,6 +2039,14 @@ webpackJsonp([3],{
 
 	var _AddTodo2 = _interopRequireDefault(_AddTodo);
 
+	var _TodoList = __webpack_require__(55);
+
+	var _TodoList2 = _interopRequireDefault(_TodoList);
+
+	var _Footer = __webpack_require__(147);
+
+	var _Footer2 = _interopRequireDefault(_Footer);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -2033,34 +2055,48 @@ webpackJsonp([3],{
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var App = function (_Component) {
-		_inherits(App, _Component);
+	//containers文件夹
+	//容器组件 最顶层 路由处理
+	//从Redux获取state
+	//向Redux派发actions
+	//
+	//compinents组件文件夹
+	//展示组件
+	//中间和子组件 例如中间组件:Footer 子组件 Link
+	//从props获取数据
+	//从props调用回调函数
 
-		function App() {
-			_classCallCheck(this, App);
 
-			return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).apply(this, arguments));
+	var AppContainer = function (_Component) {
+		_inherits(AppContainer, _Component);
+
+		function AppContainer() {
+			_classCallCheck(this, AppContainer);
+
+			return _possibleConstructorReturn(this, (AppContainer.__proto__ || Object.getPrototypeOf(AppContainer)).apply(this, arguments));
 		}
 
-		_createClass(App, [{
+		_createClass(AppContainer, [{
 			key: 'render',
 			value: function render() {
 				return _react2.default.createElement(
 					'div',
 					{ className: 'row' },
-					_react2.default.createElement(_AddTodo2.default, null)
+					_react2.default.createElement(_AddTodo2.default, null),
+					_react2.default.createElement('br', null),
+					_react2.default.createElement(_TodoList2.default, null),
+					_react2.default.createElement(_Footer2.default, null)
 				);
 			}
 		}]);
 
-		return App;
+		return AppContainer;
 	}(_react.Component);
 
-	exports.default = App;
+	exports.default = AppContainer;
 
 /***/ },
-
-/***/ 52:
+/* 52 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2071,7 +2107,7 @@ webpackJsonp([3],{
 
 	var _reactRedux = __webpack_require__(42);
 
-	var _AddTodo = __webpack_require__(142);
+	var _AddTodo = __webpack_require__(53);
 
 	var _AddTodo2 = _interopRequireDefault(_AddTodo);
 
@@ -2081,134 +2117,7 @@ webpackJsonp([3],{
 	exports.default = AddTodoContainer;
 
 /***/ },
-
-/***/ 53:
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-
-	var _redux = __webpack_require__(23);
-
-	var _todos = __webpack_require__(54);
-
-	var _todos2 = _interopRequireDefault(_todos);
-
-	var _visibilityFilter = __webpack_require__(55);
-
-	var _visibilityFilter2 = _interopRequireDefault(_visibilityFilter);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var todoApp = (0, _redux.combineReducers)({
-		todos: _todos2.default,
-		visibilityFilter: _visibilityFilter2.default
-	});
-
-	exports.default = todoApp;
-
-/***/ },
-
-/***/ 54:
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-
-	var _objectAssign = __webpack_require__(7);
-
-	var _objectAssign2 = _interopRequireDefault(_objectAssign);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
-
-	var todo = function todo(state, action) {
-		switch (action.type) {
-			case 'ADD_TODO':
-				return {
-					id: action.id,
-					text: action.text,
-					completed: false
-				};
-
-			case 'TOGGLE_TODO':
-				if (state.id !== action.id) {
-					return state;
-				}
-
-				return (0, _objectAssign2.default)({}, state, {
-					completed: !state.completed
-				});
-
-			default:
-				return state;
-		}
-	};
-
-	//永远不要在 reducer 里做这些操作
-	//修改传入参数
-	//执行有副作用的操作，如 API 请求和路由跳转
-	//调用非纯函数，如 Date.now() 或 Math.random()
-	//
-
-
-	var todos = function todos() {
-		var state = arguments.length <= 0 || arguments[0] === undefined ? [] : arguments[0];
-		var action = arguments[1];
-		//state是一个数组对象,里面都是对象
-
-		console.log('todos was called with state', state, 'and action', action);
-
-		switch (action.type) {
-			case 'ADD_TODO':
-				return [].concat(_toConsumableArray(state), [todo(undefined, action)]);
-
-			case 'TOGGLE_TODO':
-				return state.map(function (t) {
-					return todo(t, action);
-				});
-
-			default:
-				return state;
-		}
-	};
-
-	exports.default = todos;
-
-/***/ },
-
-/***/ 55:
-/***/ function(module, exports) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-	var visibilityFilter = function visibilityFilter() {
-		var state = arguments.length <= 0 || arguments[0] === undefined ? 'SHOW_ALL' : arguments[0];
-		var action = arguments[1];
-
-		switch (action.type) {
-			case 'SET_VISIBILITY_FILTER':
-				return action.filter;
-			default:
-				return state;
-		}
-	};
-
-	exports.default = visibilityFilter;
-
-/***/ },
-
-/***/ 142:
+/* 53 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2225,7 +2134,7 @@ webpackJsonp([3],{
 
 	var _reactRedux = __webpack_require__(42);
 
-	var _actions = __webpack_require__(143);
+	var _actions = __webpack_require__(54);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -2268,7 +2177,7 @@ webpackJsonp([3],{
 					_react2.default.createElement(
 						'form',
 						{ className: 'form-line', onSubmit: this.handleSubmit.bind(this) },
-						_react2.default.createElement('input', { className: 'form-control', type: 'text', ref: 'input' }),
+						_react2.default.createElement('input', { className: 'form-control', placeholder: '请输入项', type: 'text', ref: 'input' }),
 						_react2.default.createElement(
 							'button',
 							{ type: 'submit', className: 'btn btn-default' },
@@ -2315,22 +2224,58 @@ webpackJsonp([3],{
 	//connect 函数不会修改传入的 React 组件，返回的是一个新的已与 Redux store 连接的组件，而且你应该使用这个新组件
 	//mapStateToProps 函数接收整个 Redux store 的 state 作为 props，然后返回一个传入到组件 props 的对象。该函数被称之为 selector
 
-
+	//情况一
 	//只注入 dispatch，不监听 store!!!
 	//最好在多个组件上使用 connect()，每个组件只监听它所关联的部分 state
-
 	//这里的组件是不会变化的,所以不需要监听state的变化
-
-
 	// AddTodo = connect()(AddTodo);  
 	// export default AddTodo;
+
+	//情况二
+	//注意
+	//不要这样做！这会导致每次 action 都触发整个 TodoApp 重新渲染，
+	//你做的所有性能优化都将付之东流。
+	//export default connect(state => state)(TodoApp);
+
+
+	//情况三
+	//注入 dispatch 和 todos
+	//function mapStateToProps(state) {
+	//   return { todos: state.todos };
+	// }
+
+	// export default connect(mapStateToProps)(TodoApp);
+
+	//情况四
+	// 注入 todos 和所有 action creator (addTodo, completeTodo, ...)
+	// import * as actionCreators from './actionCreators';
+
+	// function mapStateToProps(state) {
+	//   return { todos: state.todos };
+	// }
+
+	// export default connect(mapStateToProps, actionCreators)(TodoApp);
+
+	//情况五
+	//注入 todos 和指定的 action creator (addTodo)
+	// import { addTodo } from './actionCreators';
+	// import { bindActionCreators } from 'redux';
+
+	// function mapStateToProps(state) {
+	//   return { todos: state.todos };
+	// }
+
+	// function mapDispatchToProps(dispatch) {
+	//   return bindActionCreators({ addTodo }, dispatch);
+	// }
+
+	// export default connect(mapStateToProps, mapDispatchToProps)(TodoApp);
 
 
 	exports.default = AddTodo;
 
 /***/ },
-
-/***/ 143:
+/* 54 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -2348,6 +2293,659 @@ webpackJsonp([3],{
 		};
 	};
 
-/***/ }
+	var toggleTodo = exports.toggleTodo = function toggleTodo(id) {
+		return {
+			type: 'TOOGLE_TODO',
+			id: id
+		};
+	};
 
-});
+	var setVisibilityFilter = exports.setVisibilityFilter = function setVisibilityFilter(filter) {
+		return {
+			type: 'SET_VISIBILITY_FILTER',
+			filter: filter
+		};
+	};
+
+/***/ },
+/* 55 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _reactRedux = __webpack_require__(42);
+
+	var _TodoList = __webpack_require__(56);
+
+	var _TodoList2 = _interopRequireDefault(_TodoList);
+
+	var _actions = __webpack_require__(54);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	//和TodoList有关的state
+	//这样的话只会重新渲染与该容器所对应的子组件,而不会关联到其他容器的组件
+	//渲染的性能提高
+
+	//我们需要从所有的state中获取与该容器有关的state
+	//
+	//组件将会监听 Redux store 的变化
+	//任何时候，只要 Redux store 发生改变，mapStateToProps 函数就会被调用
+	//该回调函数必须返回一个纯对象，这个对象会与组件的 props 合并
+	//如果你省略了这个参数，你的组件将不会监听 Redux store
+
+	var getVisibleTodos = function getVisibleTodos(todos, filter) {
+		switch (filter) {
+			case 'SHOW_ALL':
+				console.log('SHOW_ALL todos:', todos);
+				return todos; //显示全部todos
+
+			case 'SHOW_ACTIVE':
+				console.log('SHOW_ACTIVE todos:', todos);
+				return todos.filter(function (t) {
+					return t.completed;
+				});
+
+			case 'SHOW_COMPLETED':
+				console.log('SHOW_COMPLETED todos:', todos);
+				return todos.filter(function (t) {
+					return !t.completed;
+				});
+
+			default:
+				throw new Error('Unknown filter:' + filter);
+		}
+	};
+
+	var mapStateToProps = function mapStateToProps(state) {
+		//这个state是全局state,也就是所有的state
+		return {
+			todos: getVisibleTodos(state.todos, state.visibilityFilter)
+		};
+	};
+	//state.todos和state.visibilityFilter和reducers/index.js中的
+	// const todoApp = combineReducers({
+	// 	todos,
+	// 	visibilityFilter
+	// });
+	//一一对应
+
+	//如果传递的是一个对象，
+	//那么每个定义在该对象的函数都将被当作 Redux action creator，
+	//而且这个对象会与 Redux store 绑定在一起，
+	//其中所定义的方法名将作为属性名，
+	//合并到组件的 props 中
+
+
+	//如果你省略这个 mapDispatchToProps 参数，
+	//默认情况下，dispatch 会注入到你的组件 props 中
+
+	//注入指定的action creator (toggleTodo)
+	var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+		return {
+			onTodoClick: function onTodoClick(id) {
+				dispatch((0, _actions.toggleTodo)(id));
+			}
+		};
+	};
+
+	var TodoListContainer = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_TodoList2.default);
+	exports.default = TodoListContainer;
+
+/***/ },
+/* 56 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _Todo = __webpack_require__(57);
+
+	var _Todo2 = _interopRequireDefault(_Todo);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var TodoList = function (_Component) {
+		_inherits(TodoList, _Component);
+
+		function TodoList() {
+			_classCallCheck(this, TodoList);
+
+			return _possibleConstructorReturn(this, (TodoList.__proto__ || Object.getPrototypeOf(TodoList)).apply(this, arguments));
+		}
+
+		_createClass(TodoList, [{
+			key: 'render',
+			value: function render() {
+				var _props = this.props;
+				var todos = _props.todos;
+				var onTodoClick = _props.onTodoClick;
+
+				console.log("TodoList's props", this.props);
+
+				/*  SHOW_ALL:
+	   	todos: [],
+	   	onTodoClick: function onTodoClick(id)
+	    */
+
+				return _react2.default.createElement(
+					'div',
+					{ className: 'row' },
+					_react2.default.createElement(
+						'ul',
+						{ className: 'list-group' },
+						todos.map(function (todo, index, todos) {
+							return _react2.default.createElement(_Todo2.default, _extends({
+								key: todo.id
+							}, todo, {
+								onClick: function onClick() {
+									return onTodoClick(todo.id);
+								}
+							}));
+						})
+					)
+				);
+			}
+		}]);
+
+		return TodoList;
+	}(_react.Component);
+
+	exports.default = TodoList;
+
+/***/ },
+/* 57 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Todo = function (_Component) {
+		_inherits(Todo, _Component);
+
+		function Todo() {
+			_classCallCheck(this, Todo);
+
+			return _possibleConstructorReturn(this, (Todo.__proto__ || Object.getPrototypeOf(Todo)).apply(this, arguments));
+		}
+
+		_createClass(Todo, [{
+			key: 'render',
+			value: function render() {
+				var _props = this.props;
+				var onClick = _props.onClick;
+				var completed = _props.completed;
+				var text = _props.text;
+
+
+				return _react2.default.createElement(
+					'li',
+					{
+						className: 'list-group-item',
+						onClick: onClick,
+						style: {
+							textDecoration: completed ? 'line-through' : 'none'
+						}
+					},
+					text
+				);
+			}
+		}]);
+
+		return Todo;
+	}(_react.Component);
+
+	Todo.propTypes = {
+		onClick: _react.PropTypes.func.isRequired,
+		completed: _react.PropTypes.bool.isRequired,
+		text: _react.PropTypes.string.isRequired
+	};
+	exports.default = Todo;
+
+/***/ },
+/* 58 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _redux = __webpack_require__(23);
+
+	var _todos = __webpack_require__(59);
+
+	var _todos2 = _interopRequireDefault(_todos);
+
+	var _visibilityFilter = __webpack_require__(60);
+
+	var _visibilityFilter2 = _interopRequireDefault(_visibilityFilter);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var todoApp = (0, _redux.combineReducers)({
+		todos: _todos2.default,
+		visibilityFilter: _visibilityFilter2.default
+	});
+
+	exports.default = todoApp;
+
+/***/ },
+/* 59 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _objectAssign = __webpack_require__(7);
+
+	var _objectAssign2 = _interopRequireDefault(_objectAssign);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
+	var todo = function todo(state, action) {
+		switch (action.type) {
+			case 'ADD_TODO':
+				console.log('ADD_TODO:2');
+				return {
+					id: action.id,
+					text: action.text,
+					completed: false
+				};
+
+			case 'TOOGLE_TODO':
+				console.log('TOGGLE_TODO:2');
+				console.log('state:', state);
+				if (state.id !== action.id) {
+					return state;
+				}
+
+				// return assign({},state,{
+				// 	completed: !state.completed
+				// });
+				// ES7 stage-2 redux-native已经大胆使用,所以放心吧
+				console.log('state change completed:', state);
+				return _extends({}, state, {
+					completed: !state.completed
+				});
+
+			default:
+				return state;
+		}
+	};
+
+	//永远不要在 reducer 里做这些操作
+	//修改传入参数
+	//执行有副作用的操作，如 API 请求和路由跳转
+	//调用非纯函数，如 Date.now() 或 Math.random()
+	//
+
+
+	var todos = function todos() {
+		var state = arguments.length <= 0 || arguments[0] === undefined ? [] : arguments[0];
+		var action = arguments[1];
+		//state是一个数组对象,里面都是对象
+
+		console.log('todos was called with state', state, 'and action', action);
+
+		switch (action.type) {
+			case 'ADD_TODO':
+				console.log('ADD_TODO:1');
+				return [].concat(_toConsumableArray(state), [todo(undefined, action)]);
+
+			case 'TOOGLE_TODO':
+				console.log('TOOGLE_TODO:1');
+				return state.map(function (t) {
+					return todo(t, action);
+				});
+
+			default:
+				return state;
+		}
+	};
+
+	exports.default = todos;
+
+/***/ },
+/* 60 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	var visibilityFilter = function visibilityFilter() {
+		var state = arguments.length <= 0 || arguments[0] === undefined ? 'SHOW_ALL' : arguments[0];
+		var action = arguments[1];
+
+		switch (action.type) {
+			case 'SET_VISIBILITY_FILTER':
+				return action.filter;
+			default:
+				return state;
+		}
+	};
+
+	exports.default = visibilityFilter;
+
+/***/ },
+/* 61 */,
+/* 62 */,
+/* 63 */,
+/* 64 */,
+/* 65 */,
+/* 66 */,
+/* 67 */,
+/* 68 */,
+/* 69 */,
+/* 70 */,
+/* 71 */,
+/* 72 */,
+/* 73 */,
+/* 74 */,
+/* 75 */,
+/* 76 */,
+/* 77 */,
+/* 78 */,
+/* 79 */,
+/* 80 */,
+/* 81 */,
+/* 82 */,
+/* 83 */,
+/* 84 */,
+/* 85 */,
+/* 86 */,
+/* 87 */,
+/* 88 */,
+/* 89 */,
+/* 90 */,
+/* 91 */,
+/* 92 */,
+/* 93 */,
+/* 94 */,
+/* 95 */,
+/* 96 */,
+/* 97 */,
+/* 98 */,
+/* 99 */,
+/* 100 */,
+/* 101 */,
+/* 102 */,
+/* 103 */,
+/* 104 */,
+/* 105 */,
+/* 106 */,
+/* 107 */,
+/* 108 */,
+/* 109 */,
+/* 110 */,
+/* 111 */,
+/* 112 */,
+/* 113 */,
+/* 114 */,
+/* 115 */,
+/* 116 */,
+/* 117 */,
+/* 118 */,
+/* 119 */,
+/* 120 */,
+/* 121 */,
+/* 122 */,
+/* 123 */,
+/* 124 */,
+/* 125 */,
+/* 126 */,
+/* 127 */,
+/* 128 */,
+/* 129 */,
+/* 130 */,
+/* 131 */,
+/* 132 */,
+/* 133 */,
+/* 134 */,
+/* 135 */,
+/* 136 */,
+/* 137 */,
+/* 138 */,
+/* 139 */,
+/* 140 */,
+/* 141 */,
+/* 142 */,
+/* 143 */,
+/* 144 */,
+/* 145 */,
+/* 146 */,
+/* 147 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _LinkFilterContainer = __webpack_require__(148);
+
+	var _LinkFilterContainer2 = _interopRequireDefault(_LinkFilterContainer);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Footer = function (_Component) {
+		_inherits(Footer, _Component);
+
+		function Footer() {
+			_classCallCheck(this, Footer);
+
+			return _possibleConstructorReturn(this, (Footer.__proto__ || Object.getPrototypeOf(Footer)).apply(this, arguments));
+		}
+
+		_createClass(Footer, [{
+			key: 'render',
+			value: function render() {
+				return _react2.default.createElement(
+					'p',
+					null,
+					'显示:',
+					' : ',
+					_react2.default.createElement(
+						_LinkFilterContainer2.default,
+						{ filter: 'SHOW_ALL' },
+						'所有'
+					),
+					' | ',
+					_react2.default.createElement(
+						_LinkFilterContainer2.default,
+						{ filter: 'SHOW_ACTIVE' },
+						'已划线'
+					),
+					' | ',
+					_react2.default.createElement(
+						_LinkFilterContainer2.default,
+						{ filter: 'SHOW_COMPLETED' },
+						'未划线'
+					),
+					' | '
+				);
+			}
+		}]);
+
+		return Footer;
+	}(_react.Component);
+
+	exports.default = Footer;
+
+/***/ },
+/* 148 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _reactRedux = __webpack_require__(42);
+
+	var _actions = __webpack_require__(54);
+
+	var _Link = __webpack_require__(149);
+
+	var _Link2 = _interopRequireDefault(_Link);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var mapStateToProps = function mapStateToProps(state, ownProps) {
+	  console.log(state.visibilityFilter);
+	  console.log(ownProps.filter);
+	  return {
+	    active: ownProps.filter === state.visibilityFilter
+	  };
+	};
+
+	var mapDispatchToProps = function mapDispatchToProps(dispatch, ownProps) {
+	  return {
+	    onClick: function onClick() {
+	      dispatch((0, _actions.setVisibilityFilter)(ownProps.filter));
+	    }
+	  };
+	};
+
+	var FilterLink = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_Link2.default);
+
+	exports.default = FilterLink;
+
+/***/ },
+/* 149 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Link = function (_Component) {
+		_inherits(Link, _Component);
+
+		function Link() {
+			_classCallCheck(this, Link);
+
+			return _possibleConstructorReturn(this, (Link.__proto__ || Object.getPrototypeOf(Link)).apply(this, arguments));
+		}
+
+		_createClass(Link, [{
+			key: "render",
+			value: function render() {
+				var _props = this.props;
+				var active = _props.active;
+				var children = _props.children;
+				var _onClick = _props.onClick;
+
+
+				if (active) {
+					return _react2.default.createElement(
+						"span",
+						null,
+						children
+					);
+				}
+
+				return _react2.default.createElement(
+					"a",
+					{
+						href: "#",
+						onClick: function onClick(e) {
+							e.preventDefault();
+							_onClick();
+						}
+					},
+					children
+				);
+			}
+		}]);
+
+		return Link;
+	}(_react.Component);
+
+	Link.propTypes = {
+		active: _react.PropTypes.bool.isRequired,
+		children: _react.PropTypes.node.isRequired,
+		onClick: _react.PropTypes.func.isRequired
+	};
+	exports.default = Link;
+
+/***/ }
+]);

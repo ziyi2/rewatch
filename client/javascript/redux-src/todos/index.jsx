@@ -3,7 +3,7 @@ import { render } from 'react-dom';
 import { createStore } from 'redux';
 import { Provider }  from 'react-redux';
 
-import App from './containers/App.Container';
+import AppContainer from './containers/App.Container';
 import reducer from './reducers';
 
 
@@ -21,8 +21,26 @@ const store = createStore(reducer);
 
 // 测试的时候用
 store.subscribe(() =>
-  console.log(store.getState())
+  console.log('index.jsx  store.getState():',store.getState())
 );
+
+/*
+{
+	todos: [
+	{
+		completed:false,
+		id:0,
+		text:'42314123'
+	}
+	{
+		completed:false,
+		id:1,
+		text:'42314123'
+	}
+	],
+	visibilityFilter:'SHOW_ALL'
+}
+ */
 
 // 改变内部 state 惟一方法是 dispatch 一个 action。
 // action 可以被序列化，用日记记录和储存下来，后期还可以以回放的方式执行
@@ -79,7 +97,7 @@ const react_redux_todos = document.getElementById('react-redux-todos');
 
 render (
 	<Provider store={store}>	
-		<App />
+		<AppContainer />
 	</Provider>,
 	react_redux_todos
 )
