@@ -1,4 +1,4 @@
-webpackJsonp([5],[
+webpackJsonp([3],[
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -10,30 +10,26 @@ webpackJsonp([5],[
 
 	var _reactDom = __webpack_require__(2);
 
-	var _redux = __webpack_require__(23);
-
 	var _reactRedux = __webpack_require__(42);
 
-	var _App = __webpack_require__(71);
+	var _App = __webpack_require__(51);
 
 	var _App2 = _interopRequireDefault(_App);
 
-	var _reducers = __webpack_require__(77);
+	var _configureStore = __webpack_require__(54);
 
-	var _reducers2 = _interopRequireDefault(_reducers);
+	var _configureStore2 = _interopRequireDefault(_configureStore);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var store = (0, _redux.createStore)(_reducers2.default);
-	console.log('index.jsx store.getState():', store.getState());
-
-	var redux_todos_mvc = document.getElementById('react-redux-todos-mvc');
+	var store = (0, _configureStore2.default)();
+	console.log('index.jsx:', store.getState());
 
 	(0, _reactDom.render)(_react2.default.createElement(
-		_reactRedux.Provider,
-		{ store: store },
-		_react2.default.createElement(_App2.default, null)
-	), redux_todos_mvc);
+	  _reactRedux.Provider,
+	  { store: store },
+	  _react2.default.createElement(_App2.default, null)
+	), document.getElementById('react-redux-async'));
 
 /***/ },
 /* 1 */,
@@ -1850,33 +1846,53 @@ webpackJsonp([5],[
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(15)))
 
 /***/ },
-/* 51 */,
-/* 52 */,
-/* 53 */,
-/* 54 */,
-/* 55 */,
-/* 56 */,
-/* 57 */,
-/* 58 */,
-/* 59 */,
-/* 60 */,
-/* 61 */,
-/* 62 */,
-/* 63 */,
-/* 64 */,
-/* 65 */,
-/* 66 */,
-/* 67 */,
-/* 68 */,
-/* 69 */,
-/* 70 */,
-/* 71 */
+/* 51 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
-		value: true
+	  value: true
+	});
+
+	var _redux = __webpack_require__(23);
+
+	var _reactRedux = __webpack_require__(42);
+
+	var _Counter = __webpack_require__(52);
+
+	var _Counter2 = _interopRequireDefault(_Counter);
+
+	var _actions = __webpack_require__(53);
+
+	var CounterActions = _interopRequireWildcard(_actions);
+
+	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	//将state.counter绑定到props的counter
+	function mapStateToProps(state) {
+	  return {
+	    counter: state.counter
+	  };
+	}
+	//将action的所有方法绑定到props上
+	function mapDispatchToProps(dispatch) {
+	  return (0, _redux.bindActionCreators)(CounterActions, dispatch);
+	}
+
+	//通过react-redux提供的connect方法将我们需要的state中的数据和actions中的方法绑定到props上
+	exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_Counter2.default);
+
+/***/ },
+/* 52 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
 	});
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -1884,24 +1900,6 @@ webpackJsonp([5],[
 	var _react = __webpack_require__(1);
 
 	var _react2 = _interopRequireDefault(_react);
-
-	var _reactRedux = __webpack_require__(42);
-
-	var _redux = __webpack_require__(23);
-
-	var _actions = __webpack_require__(72);
-
-	var TodoActions = _interopRequireWildcard(_actions);
-
-	var _Header = __webpack_require__(74);
-
-	var _Header2 = _interopRequireDefault(_Header);
-
-	var _MainSection = __webpack_require__(75);
-
-	var _MainSection2 = _interopRequireDefault(_MainSection);
-
-	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -1911,98 +1909,82 @@ webpackJsonp([5],[
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var AppContainer = function (_Component) {
-		_inherits(AppContainer, _Component);
+	var Counter = function (_Component) {
+	  _inherits(Counter, _Component);
 
-		function AppContainer() {
-			_classCallCheck(this, AppContainer);
+	  function Counter() {
+	    _classCallCheck(this, Counter);
 
-			return _possibleConstructorReturn(this, (AppContainer.__proto__ || Object.getPrototypeOf(AppContainer)).apply(this, arguments));
-		}
+	    return _possibleConstructorReturn(this, (Counter.__proto__ || Object.getPrototypeOf(Counter)).apply(this, arguments));
+	  }
 
-		_createClass(AppContainer, [{
-			key: 'render',
-			value: function render() {
-				var _props = this.props;
-				var todos = _props.todos;
-				var actions = _props.actions;
+	  _createClass(Counter, [{
+	    key: 'render',
+	    value: function render() {
+	      //从组件的props属性中导入四个方法和一个变量
+	      var _props = this.props;
+	      var increment = _props.increment;
+	      var incrementIfOdd = _props.incrementIfOdd;
+	      var incrementAsync = _props.incrementAsync;
+	      var decrement = _props.decrement;
+	      var counter = _props.counter;
+	      //渲染组件，包括一个数字，四个按钮
 
-				console.log('App.Container, this.props:', this.props);
+	      return _react2.default.createElement(
+	        'p',
+	        null,
+	        'Clicked: ',
+	        counter,
+	        ' times',
+	        ' ',
+	        _react2.default.createElement(
+	          'button',
+	          { onClick: increment },
+	          '+'
+	        ),
+	        ' ',
+	        _react2.default.createElement(
+	          'button',
+	          { onClick: decrement },
+	          '-'
+	        ),
+	        ' ',
+	        _react2.default.createElement(
+	          'button',
+	          { onClick: incrementIfOdd },
+	          'Increment if odd'
+	        ),
+	        ' ',
+	        _react2.default.createElement(
+	          'button',
+	          { onClick: function onClick() {
+	              return incrementAsync();
+	            } },
+	          'Increment async'
+	        )
+	      );
+	    }
+	  }]);
 
-				return React.createElement(
-					'div',
-					{ className: 'row' },
-					React.createElement(_Header2.default, { addTodo: actions.addTodo }),
-					React.createElement('br', null),
-					React.createElement(_MainSection2.default, this.props)
-				);
-			}
-		}]);
-
-		return AppContainer;
+	  return Counter;
 	}(_react.Component);
+	//限制组件的props安全
 
-	AppContainer.propTypes = {
-		todos: _react.PropTypes.array.isRequired,
-		actions: _react.PropTypes.object.isRequired
+
+	Counter.propTypes = {
+	  //increment必须为fucntion,且必须存在
+	  increment: _react.PropTypes.func.isRequired,
+	  incrementIfOdd: _react.PropTypes.func.isRequired,
+	  incrementAsync: _react.PropTypes.func.isRequired,
+	  decrement: _react.PropTypes.func.isRequired,
+	  //counter必须为数字，且必须存在
+	  counter: _react.PropTypes.number.isRequired
 	};
 
-
-	function mapStateToProps(state) {
-		return {
-			todos: state.todos
-		};
-	}
-
-	function mapDispatchToProps(dispatch) {
-		console.log('App.Container,TodoActions:', TodoActions);
-		return {
-			actions: (0, _redux.bindActionCreators)(TodoActions, dispatch)
-		};
-	}
-
-	exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(AppContainer);
+	exports.default = Counter;
 
 /***/ },
-/* 72 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-	exports.addTodo = addTodo;
-	exports.delTodo = delTodo;
-
-	var _ActionTypes = __webpack_require__(73);
-
-	var types = _interopRequireWildcard(_ActionTypes);
-
-	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
-
-	function addTodo(text) {
-
-		console.log('actions,types.ADD_TODO:', types.ADD_TODO);
-
-		return {
-			type: types.ADD_TODO,
-			text: text
-		};
-	}
-
-	function delTodo(id) {
-
-		console.log('actions,types.DEL_TODO:', types.DEL_TODO);
-
-		return {
-			type: types.DEL_TODO,
-			id: id
-		};
-	}
-
-/***/ },
-/* 73 */
+/* 53 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -2010,206 +1992,241 @@ webpackJsonp([5],[
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	var ADD_TODO = exports.ADD_TODO = 'ADD_TODO';
-	var DEL_TODO = exports.DEL_TODO = 'DEL_TODO';
+	exports.increment = increment;
+	exports.decrement = decrement;
+	exports.incrementIfOdd = incrementIfOdd;
+	exports.incrementAsync = incrementAsync;
+	//导出加一的方法
+	function increment() {
+	  return {
+	    type: 'INCREMENT_COUNTER'
+	  };
+	}
+	//导出减一的方法
+	function decrement() {
+	  return {
+	    type: 'DECREMENT_COUNTER'
+	  };
+	}
+	//导出奇数加一的方法，该方法返回一个方法，包含dispatch和getState两个参数，dispatch用于执行action的方法，getState返回state
+	function incrementIfOdd() {
+	  return function (dispatch, getState) {
+	    //获取state对象中的counter属性值
+	    var _getState = getState();
+
+	    var counter = _getState.counter;
+
+	    //偶数则返回
+
+	    if (counter % 2 === 0) {
+	      return;
+	    }
+	    //没有返回就执行加一
+	    dispatch(increment());
+	  };
+	}
+	//导出一个方法,包含一个默认参数delay,返回一个方法,一秒后加一   
+	//注意这里是异步执行,延迟两秒后执行 
+	//
+	//
+	//
+	//
+	//这里有个诀窍：不返回 action，而是返回 function。这个 function 会在合适的时机 dispatch action。但是如果我们希望
+	// 这个 function 能够 dispatch action，那么就需要向它传入 dispatch 函数。于是代码类似如下：
+	// 
+	// 你可能再次注意到 action creator 返回的不是 action 而是 function。
+	// 所以 reducer 函数很可能不知道如何处理这样的返回值，
+	// 
+	// // console.log("\n", 'Running our async action creator:', "\n")
+	// store.dispatch(asyncSayActionCreator_1('Hi'))
+
+	// 输出：
+	//     ...
+	//     /Users/classtar/Codes/redux-tutorial/node_modules/redux/node_modules/invariant/invariant.js:51
+	//         throw error;
+	//               ^
+	//     Error: Invariant Violation: Actions must be plain objects. Use custom middleware for async actions.
+	//     ...
+
+	// 我们所设计的 function 似乎没有进入 reducer 函数。但是 Redux 给出了温馨提示：使用自定义中间件（middleware）来支持异步 action。
+	// 看来我们的方向是正确的，可中间件（middleware）又是什么呢？
+
+	// 我向你保证 action creator asyncSayActionCreator_1 不仅没有问题，而且只要我们搞清楚 middleware 的概念并掌握它的使用方法，
+	// 这个异步 action creator 就会按照我们所设想的结果执行。
+	// 具体查看store/configureStore.js
+	function incrementAsync() {
+	  var delay = arguments.length <= 0 || arguments[0] === undefined ? 1000 : arguments[0];
+
+	  return function (dispatch) {
+	    setTimeout(function () {
+	      dispatch(increment());
+	    }, delay);
+	  };
+	}
+
+	//这些方法都导出,在其他文件导入时候,使用import * as actions 就可以生成一个actions对象包含所有的export
 
 /***/ },
-/* 74 */
+/* 54 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
-		value: true
+	    value: true
 	});
+	exports.default = configureStore;
 
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	var _redux = __webpack_require__(23);
 
-	var _react = __webpack_require__(1);
+	var _reduxThunk = __webpack_require__(55);
 
-	var _react2 = _interopRequireDefault(_react);
+	var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
+
+	var _reducers = __webpack_require__(56);
+
+	var _reducers2 = _interopRequireDefault(_reducers);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	//applyMiddleware来自redux可以包装 store 的 dispatch
+	//thunk作用是使action创建函数可以返回一个function代替一个action对象 这样就可以执行异步了
+	//
+	//
+	//
+	//
+	//中间件似乎可以帮助我们处理异步 action
+	//
+	//
+	//// 通常来说中间件是在某个应用中 A 和 B 部分中间的那一块，
+	// 中间件可以把 A 发送数据到 B 的形式从
+	// A -----> B
+	// 变成:
+	// A ---> middleware 1 ---> middleware 2 ---> middleware 3 --> ... ---> B
+	// 
+	// 
+	// 
+	// // 那么中间件在 Redux 中是如何工作的？
+	// 看上去 Redux 并不能自动处理 action creator 中返回的异步函数。
+	// 但如果在 action creator 和 reducer 之间增加一个中间件，就可以把这个函数转成
+	// 适合 Redux 处理的内容：
 
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	// action ---> dispatcher ---> middleware 1 ---> middleware 2 ---> reducers
+	//
+	/// 每当一个 action（或者其他诸如异步 action creator 中的某个函数）被分发时，
+	// 我们的中间件就会被调用
+	// 并且在需要的时候协助 action creator 分发真正的 action（或者什么都不做，
+	// 有时我们需要这么做）
 
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	// 在 Redux 中，中间件是纯粹的函数，
+	// 有明确的使用方法并且严格的遵循以下格式：
+	/*
+	    var anyMiddleware = function ({ dispatch, getState }) {
+	        return function(next) {
+	            return function (action) {
+	                // 你的中间件业务相关代码
+	            }
+	        }
+	    }
+	*/
 
-	var Header = function (_Component) {
-		_inherits(Header, _Component);
+	// 如上所述，中间件由三个嵌套的函数构成（会依次调用）：
+	// 1) 第一层向其余两层提供分发函数和 getState 函数
+	//    （因为你的中间件或 action creator 可能需要从 state 中读取数据）
+	// 2) 第二层提供 next 函数，它允许你显式的将处理过的输入传递给下一个中间件或 Redux
+	//    （这样 Redux 才能调用所有 reducer)。
+	// 3) 第三层提供从上一个中间件或从 dispatch 传递来的 action，
+	//     这个 action 可以调用下一个中间件（让 action 继续流动) 或者
+	//     以想要的方式处理 action。
 
-		function Header() {
-			_classCallCheck(this, Header);
+	// 学习过函数式编程的人可能会意识到给上述代码提供了一个机会来使用
+	// 柯里化（如果你不理解也没关系，跳过接下去的 10 行，不会影响你对 redux 的理解）。
+	// 使用柯里化，你可以简化上述函数：
+	/*
+	    // "curry" may come any functional programming library (lodash, ramda, etc.)
+	    var thunkMiddleware = curry(
+	        ({dispatch, getState}, next, action) => (
+	            // 你的中间件业务相关代码
+	        )
+	    );
+	*/
 
-			return _possibleConstructorReturn(this, (Header.__proto__ || Object.getPrototypeOf(Header)).apply(this, arguments));
-		}
+	// 我们为异步 action creator 提供的中间件叫 thunk middleware
+	// 它的代码在：https://github.com/gaearon/redux-thunk.
+	// 它看上去是这样 (为了可读性使用 ES5 语法书写该函数）:
 
-		_createClass(Header, [{
-			key: 'handleSubmit',
-			value: function handleSubmit(e) {
-				e.preventDefault();
-				//alert(this.refs.input.value);
-				// console.log(this.props);
-				if (!this.refs.input.value.trim()) {
-					return;
-				}
+	// var thunkMiddleware = function ({ dispatch, getState }) {
+	//     // console.log('Enter thunkMiddleware');
+	//     return function(next) {
+	//         // console.log('Function "next" provided:', next);
+	//         return function (action) {
+	//             // console.log('Handling action:', action);
+	//             return typeof action === 'function' ?
+	//                 action(dispatch, getState) :
+	//                 next(action)
+	//         }
+	//     }
+	// }
 
-				this.props.addTodo(this.refs.input.value);
-				this.refs.input.value = '';
-			}
-		}, {
-			key: 'render',
-			value: function render() {
-				return _react2.default.createElement(
-					'header',
-					{ className: 'row' },
-					_react2.default.createElement(
-						'form',
-						{ onSubmit: this.handleSubmit.bind(this), className: 'form-inline' },
-						_react2.default.createElement('input', { type: 'text', className: 'form-control', ref: 'input', placeholder: '请输入项' }),
-						_react2.default.createElement(
-							'button',
-							{ className: 'btn btn-default' },
-							'添加'
-						)
-					)
-				);
-			}
-		}]);
+	// 为了让 Redux 知道我们有一个或多个中间件，我们使用 Redux 的
+	// 辅助函数：applyMiddleware.
+	// 
+	// 
+	// 
 
-		return Header;
-	}(_react.Component);
+	// applyMiddleware 接收所有中间件作为参数，返回一个供 Redux createStore 调用的函数。
+	// 当最后这个函数被调用时，它会产生一个 Store 增强器，用来将所有中间件应用到 Store 的 dispatch 上。
+	// (来自 https://github.com/rackt/redux/blob/v1.0.0-rc/src/utils/applyMiddleware.js)
 
-	exports.default = Header;
+	// 下面就是如何将一个中间件应用到 Redux store：
+
+	// import { createStore, combineReducers, applyMiddleware } from 'redux'
+
+	// const finalCreateStore = applyMiddleware(thunkMiddleware)(createStore)
+	// 针对多个中间件， 使用：applyMiddleware(middleware1, middleware2, ...)(createStore)
+
+	// const store_0 = finalCreateStore(reducer)
+	//applyMiddleware来自redux可以包装 store 的 dispatch()
+
+	//thunk作用使action创建函数可以返回一个function代替一个action对象
+
+	var createStoreWithMiddleware = (0, _redux.compose)((0, _redux.applyMiddleware)(_reduxThunk2.default))(_redux.createStore);
+
+	function configureStore(initialState) {
+	    var store = createStoreWithMiddleware(_reducers2.default, initialState);
+	    return store;
+	}
 
 /***/ },
-/* 75 */
-/***/ function(module, exports, __webpack_require__) {
+/* 55 */
+/***/ function(module, exports) {
 
 	'use strict';
 
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
+	exports.__esModule = true;
+	function createThunkMiddleware(extraArgument) {
+	  return function (_ref) {
+	    var dispatch = _ref.dispatch;
+	    var getState = _ref.getState;
+	    return function (next) {
+	      return function (action) {
+	        if (typeof action === 'function') {
+	          return action(dispatch, getState, extraArgument);
+	        }
 
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	        return next(action);
+	      };
+	    };
+	  };
+	}
 
-	var _react = __webpack_require__(1);
+	var thunk = createThunkMiddleware();
+	thunk.withExtraArgument = createThunkMiddleware;
 
-	var _react2 = _interopRequireDefault(_react);
-
-	var _TodoItem = __webpack_require__(76);
-
-	var _TodoItem2 = _interopRequireDefault(_TodoItem);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var MainSection = function (_Component) {
-		_inherits(MainSection, _Component);
-
-		function MainSection() {
-			_classCallCheck(this, MainSection);
-
-			return _possibleConstructorReturn(this, (MainSection.__proto__ || Object.getPrototypeOf(MainSection)).apply(this, arguments));
-		}
-
-		_createClass(MainSection, [{
-			key: 'render',
-			value: function render() {
-				var _props = this.props;
-				var todos = _props.todos;
-				var actions = _props.actions;
-
-				console.log('MainSection,this.props:', this.props);
-
-				return _react2.default.createElement(
-					'section',
-					{ className: 'row' },
-					_react2.default.createElement(
-						'ul',
-						{ className: 'list-group' },
-						todos.map(function (todo) {
-							return _react2.default.createElement(_TodoItem2.default, { key: todo.id, todo: todo, delTodo: actions.delTodo });
-						})
-					)
-				);
-			}
-		}]);
-
-		return MainSection;
-	}(_react.Component);
-
-	exports.default = MainSection;
+	exports['default'] = thunk;
 
 /***/ },
-/* 76 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var TodoItem = function (_Component) {
-		_inherits(TodoItem, _Component);
-
-		function TodoItem() {
-			_classCallCheck(this, TodoItem);
-
-			return _possibleConstructorReturn(this, (TodoItem.__proto__ || Object.getPrototypeOf(TodoItem)).apply(this, arguments));
-		}
-
-		_createClass(TodoItem, [{
-			key: 'handleClick',
-			value: function handleClick() {
-				this.props.delTodo(this.props.todo.id);
-			}
-		}, {
-			key: 'render',
-			value: function render() {
-				return _react2.default.createElement(
-					'li',
-					{ className: 'list-group-item' },
-					this.props.todo.text,
-					_react2.default.createElement(
-						'button',
-						{ className: 'btn btn-default', onClick: this.handleClick.bind(this) },
-						'删除'
-					)
-				);
-			}
-		}]);
-
-		return TodoItem;
-	}(_react.Component);
-
-	exports.default = TodoItem;
-
-/***/ },
-/* 77 */
+/* 56 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2220,92 +2237,46 @@ webpackJsonp([5],[
 
 	var _redux = __webpack_require__(23);
 
-	var _todos = __webpack_require__(78);
+	var _counter = __webpack_require__(57);
 
-	var _todos2 = _interopRequireDefault(_todos);
+	var _counter2 = _interopRequireDefault(_counter);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+	//使用redux的combineReducers方法将所有reducer打包起来
 	var rootReducer = (0, _redux.combineReducers)({
-	  todos: _todos2.default
+	  counter: _counter2.default
 	});
 
 	exports.default = rootReducer;
 
 /***/ },
-/* 78 */
-/***/ function(module, exports, __webpack_require__) {
+/* 57 */
+/***/ function(module, exports) {
 
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
-		value: true
+	  value: true
 	});
-	exports.default = todos;
+	exports.default = counter;
 
-	var _ActionTypes = __webpack_require__(73);
-
-	var types = _interopRequireWildcard(_ActionTypes);
-
-	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
-
-	function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
-
-	var initialState = [{
-		text: 'User Redux',
-		completed: false,
-		id: 0
-	}];
-
-	function todo(state, action) {
-		switch (action.type) {
-			case types.ADD_TODO:
-				return {
-					id: state.reduce(function (maxId, todo) {
-						return Math.max(todo.id, maxId);
-					}, -1) + 1,
-					completed: false,
-					text: action.text
-				};
-
-			case types.DEL_TODO:
-				console.log('DEL_TODO 2');
-				console.log('action.id:', action.id);
-				console.log('state.id:', state.id);
-				// if(state.id !== action.id) {
-				// 	return false;
-				// } 
-				// return true;
-				return state.id !== action.id;
-
-			default:
-				return state;
-		}
-	}
-
-	function todos() {
-		var state = arguments.length <= 0 || arguments[0] === undefined ? initialState : arguments[0];
-		var action = arguments[1];
+	//reducer其实也是个方法而已,参数是state和action,返回值是新的state
+	function counter() {
+	  var state = arguments.length <= 0 || arguments[0] === undefined ? 0 : arguments[0];
+	  var action = arguments[1];
 
 
-		console.log('todos was called with state', state, 'and action', action);
+	  console.log('counter was called with state', state, 'and action', action);
 
-		switch (action.type) {
-			case types.ADD_TODO:
-				return [todo(state, action)].concat(_toConsumableArray(state));
-
-			case types.DEL_TODO:
-				console.log('DEL_TODO 1');
-				return state.filter(function (t) {
-					return (//map不修改原数组,这也是我们所规定的不能修改state,使用filter返回的总是稠密数组
-						//需要注意的是map可以返回稀疏数组
-						todo(t, action)
-					);
-				});
-
-			default:
-				return state;
-		}
+	  switch (action.type) {
+	    case 'INCREMENT_COUNTER':
+	      return state + 1;
+	    case 'DECREMENT_COUNTER':
+	      return state - 1;
+	    default:
+	      return state;
+	  }
 	}
 
 /***/ }

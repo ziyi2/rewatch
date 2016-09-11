@@ -63,6 +63,7 @@ examples
 - redux-src/todos
 - redux-src/todos-with-undo
 - redux-src/todos-mvc
+- redux-src/async
 
 
 ## Link
