@@ -32,7 +32,9 @@ npm stop
 npm install flux --save
 ```
 
->Tip: see Example `client/javascript/flux-src`
+example
+- none-flux-src
+- flux-src
 
 
 ## React Router
@@ -41,9 +43,6 @@ npm install flux --save
 npm install react-router --save
 ```
 
->Tip: see Example `client/javascript/router-src`
-
-
 服务器端渲染
 
 ```javascript
@@ -51,12 +50,23 @@ npm run webpack
 npm run start-server
 ```
 
+examples
+- router-browser-src
+- router-server-src
+
+
 ## React Redux
 
 ```javascript
 npm install react-redux redux --save
 ```
->Tip: see Example `client/javascript/redux-src`
+
+examples
+- counter
+- todos-test
+- todos
+- todos-with-undo
+- todos-mvc
 
 
 ## Link
