@@ -1,4 +1,4 @@
-webpackJsonp([4],[
+webpackJsonp([5],[
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -14,11 +14,11 @@ webpackJsonp([4],[
 
 	var _reactRedux = __webpack_require__(42);
 
-	var _App = __webpack_require__(64);
+	var _App = __webpack_require__(72);
 
 	var _App2 = _interopRequireDefault(_App);
 
-	var _reducers = __webpack_require__(75);
+	var _reducers = __webpack_require__(83);
 
 	var _reducers2 = _interopRequireDefault(_reducers);
 
@@ -1860,7 +1860,15 @@ webpackJsonp([4],[
 /* 61 */,
 /* 62 */,
 /* 63 */,
-/* 64 */
+/* 64 */,
+/* 65 */,
+/* 66 */,
+/* 67 */,
+/* 68 */,
+/* 69 */,
+/* 70 */,
+/* 71 */,
+/* 72 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1873,19 +1881,19 @@ webpackJsonp([4],[
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _Footer = __webpack_require__(65);
+	var _Footer = __webpack_require__(73);
 
 	var _Footer2 = _interopRequireDefault(_Footer);
 
-	var _AddTodo = __webpack_require__(69);
+	var _AddTodo = __webpack_require__(77);
 
 	var _AddTodo2 = _interopRequireDefault(_AddTodo);
 
-	var _VisibleTodoList = __webpack_require__(70);
+	var _VisibleTodoList = __webpack_require__(78);
 
 	var _VisibleTodoList2 = _interopRequireDefault(_VisibleTodoList);
 
-	var _UndoRedo = __webpack_require__(73);
+	var _UndoRedo = __webpack_require__(81);
 
 	var _UndoRedo2 = _interopRequireDefault(_UndoRedo);
 
@@ -1905,7 +1913,7 @@ webpackJsonp([4],[
 	exports.default = App;
 
 /***/ },
-/* 65 */
+/* 73 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1918,7 +1926,7 @@ webpackJsonp([4],[
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _FilterLink = __webpack_require__(66);
+	var _FilterLink = __webpack_require__(74);
 
 	var _FilterLink2 = _interopRequireDefault(_FilterLink);
 
@@ -1953,7 +1961,7 @@ webpackJsonp([4],[
 	exports.default = Footer;
 
 /***/ },
-/* 66 */
+/* 74 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1964,9 +1972,9 @@ webpackJsonp([4],[
 
 	var _reactRedux = __webpack_require__(42);
 
-	var _actions = __webpack_require__(67);
+	var _actions = __webpack_require__(75);
 
-	var _Link = __webpack_require__(68);
+	var _Link = __webpack_require__(76);
 
 	var _Link2 = _interopRequireDefault(_Link);
 
@@ -1991,7 +1999,7 @@ webpackJsonp([4],[
 	exports.default = FilterLink;
 
 /***/ },
-/* 67 */
+/* 75 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -2023,7 +2031,7 @@ webpackJsonp([4],[
 	};
 
 /***/ },
-/* 68 */
+/* 76 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -2072,7 +2080,7 @@ webpackJsonp([4],[
 	exports.default = Link;
 
 /***/ },
-/* 69 */
+/* 77 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2087,7 +2095,7 @@ webpackJsonp([4],[
 
 	var _reactRedux = __webpack_require__(42);
 
-	var _actions = __webpack_require__(67);
+	var _actions = __webpack_require__(75);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -2125,7 +2133,7 @@ webpackJsonp([4],[
 	exports.default = AddTodo;
 
 /***/ },
-/* 70 */
+/* 78 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2136,9 +2144,9 @@ webpackJsonp([4],[
 
 	var _reactRedux = __webpack_require__(42);
 
-	var _actions = __webpack_require__(67);
+	var _actions = __webpack_require__(75);
 
-	var _TodoList = __webpack_require__(71);
+	var _TodoList = __webpack_require__(79);
 
 	var _TodoList2 = _interopRequireDefault(_TodoList);
 
@@ -2180,7 +2188,7 @@ webpackJsonp([4],[
 	exports.default = VisibleTodoList;
 
 /***/ },
-/* 71 */
+/* 79 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2195,7 +2203,7 @@ webpackJsonp([4],[
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _Todo = __webpack_require__(72);
+	var _Todo = __webpack_require__(80);
 
 	var _Todo2 = _interopRequireDefault(_Todo);
 
@@ -2231,7 +2239,7 @@ webpackJsonp([4],[
 	exports.default = TodoList;
 
 /***/ },
-/* 72 */
+/* 80 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2271,7 +2279,7 @@ webpackJsonp([4],[
 	exports.default = Todo;
 
 /***/ },
-/* 73 */
+/* 81 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2284,7 +2292,7 @@ webpackJsonp([4],[
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _reduxUndo = __webpack_require__(74);
+	var _reduxUndo = __webpack_require__(82);
 
 	var _reactRedux = __webpack_require__(42);
 
@@ -2334,7 +2342,7 @@ webpackJsonp([4],[
 	exports.default = UndoRedo;
 
 /***/ },
-/* 74 */
+/* 82 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -2684,7 +2692,7 @@ webpackJsonp([4],[
 	// /excludeAction
 
 /***/ },
-/* 75 */
+/* 83 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2695,11 +2703,11 @@ webpackJsonp([4],[
 
 	var _redux = __webpack_require__(23);
 
-	var _todos = __webpack_require__(76);
+	var _todos = __webpack_require__(84);
 
 	var _todos2 = _interopRequireDefault(_todos);
 
-	var _visibilityFilter = __webpack_require__(77);
+	var _visibilityFilter = __webpack_require__(85);
 
 	var _visibilityFilter2 = _interopRequireDefault(_visibilityFilter);
 
@@ -2713,7 +2721,7 @@ webpackJsonp([4],[
 	exports.default = todoApp;
 
 /***/ },
-/* 76 */
+/* 84 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2724,7 +2732,7 @@ webpackJsonp([4],[
 
 	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-	var _reduxUndo = __webpack_require__(74);
+	var _reduxUndo = __webpack_require__(82);
 
 	var _reduxUndo2 = _interopRequireDefault(_reduxUndo);
 
@@ -2776,7 +2784,7 @@ webpackJsonp([4],[
 	exports.default = undoableTodos;
 
 /***/ },
-/* 77 */
+/* 85 */
 /***/ function(module, exports) {
 
 	'use strict';
