@@ -2,18 +2,13 @@
 
 ## Start
 
-开发环境启动方式
+启动方式
 
 ```javascript
 npm run dev     //webpack
 npm start       //node app
 ```
 
-生产环境启动方式
-
-```javascript
-npm run pro
-```
 
 Make sure your server is running then visit [http://localhost:3000](http://localhost:3000)
 
@@ -62,11 +57,12 @@ npm install react-redux redux --save
 ```
 
 examples
-- counter
-- todos-test
-- todos
-- todos-with-undo
-- todos-mvc
+
+- redux-src/counter
+- redux-src/todos-test
+- redux-src/todos
+- redux-src/todos-with-undo
+- redux-src/todos-mvc
 
 
 ## Link
