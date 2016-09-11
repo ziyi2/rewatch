@@ -61,4 +61,9 @@ const todos = (state = [], action) => { 	//state是一个数组对象,里面都�
 
 };
 
-export default todos;
+ export default todos;
+// const undoableTodos = undoable(todos, {
+//   filter: distinctState()
+// })
+
+// export default undoableTodos;
