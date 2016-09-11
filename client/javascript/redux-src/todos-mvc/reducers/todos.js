@@ -49,6 +49,7 @@ export default function todos(state=initialState,action) {
 		case types.DEL_TODO:
 			console.log('DEL_TODO 1');
 			return state.filter(t =>		//map不修改原数组,这也是我们所规定的不能修改state,使用filter返回的总是稠密数组
+											//需要注意的是map可以返回稀疏数组
 				todo(t,action)
 			);
 
