@@ -14,11 +14,11 @@ webpackJsonp([5],[
 
 	var _reactRedux = __webpack_require__(42);
 
-	var _App = __webpack_require__(71);
+	var _App = __webpack_require__(72);
 
 	var _App2 = _interopRequireDefault(_App);
 
-	var _reducers = __webpack_require__(77);
+	var _reducers = __webpack_require__(78);
 
 	var _reducers2 = _interopRequireDefault(_reducers);
 
@@ -1870,7 +1870,8 @@ webpackJsonp([5],[
 /* 68 */,
 /* 69 */,
 /* 70 */,
-/* 71 */
+/* 71 */,
+/* 72 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1889,15 +1890,15 @@ webpackJsonp([5],[
 
 	var _redux = __webpack_require__(23);
 
-	var _actions = __webpack_require__(72);
+	var _actions = __webpack_require__(73);
 
 	var TodoActions = _interopRequireWildcard(_actions);
 
-	var _Header = __webpack_require__(74);
+	var _Header = __webpack_require__(75);
 
 	var _Header2 = _interopRequireDefault(_Header);
 
-	var _MainSection = __webpack_require__(75);
+	var _MainSection = __webpack_require__(76);
 
 	var _MainSection2 = _interopRequireDefault(_MainSection);
 
@@ -1964,7 +1965,7 @@ webpackJsonp([5],[
 	exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(AppContainer);
 
 /***/ },
-/* 72 */
+/* 73 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1975,7 +1976,7 @@ webpackJsonp([5],[
 	exports.addTodo = addTodo;
 	exports.delTodo = delTodo;
 
-	var _ActionTypes = __webpack_require__(73);
+	var _ActionTypes = __webpack_require__(74);
 
 	var types = _interopRequireWildcard(_ActionTypes);
 
@@ -2002,7 +2003,7 @@ webpackJsonp([5],[
 	}
 
 /***/ },
-/* 73 */
+/* 74 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -2014,7 +2015,7 @@ webpackJsonp([5],[
 	var DEL_TODO = exports.DEL_TODO = 'DEL_TODO';
 
 /***/ },
-/* 74 */
+/* 75 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2085,7 +2086,7 @@ webpackJsonp([5],[
 	exports.default = Header;
 
 /***/ },
-/* 75 */
+/* 76 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2100,7 +2101,7 @@ webpackJsonp([5],[
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _TodoItem = __webpack_require__(76);
+	var _TodoItem = __webpack_require__(77);
 
 	var _TodoItem2 = _interopRequireDefault(_TodoItem);
 
@@ -2150,7 +2151,7 @@ webpackJsonp([5],[
 	exports.default = MainSection;
 
 /***/ },
-/* 76 */
+/* 77 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2209,7 +2210,7 @@ webpackJsonp([5],[
 	exports.default = TodoItem;
 
 /***/ },
-/* 77 */
+/* 78 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2220,7 +2221,7 @@ webpackJsonp([5],[
 
 	var _redux = __webpack_require__(23);
 
-	var _todos = __webpack_require__(78);
+	var _todos = __webpack_require__(79);
 
 	var _todos2 = _interopRequireDefault(_todos);
 
@@ -2233,7 +2234,7 @@ webpackJsonp([5],[
 	exports.default = rootReducer;
 
 /***/ },
-/* 78 */
+/* 79 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2243,7 +2244,7 @@ webpackJsonp([5],[
 	});
 	exports.default = todos;
 
-	var _ActionTypes = __webpack_require__(73);
+	var _ActionTypes = __webpack_require__(74);
 
 	var types = _interopRequireWildcard(_ActionTypes);
 
