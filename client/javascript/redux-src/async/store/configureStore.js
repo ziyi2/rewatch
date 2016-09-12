@@ -106,14 +106,59 @@ const loggerMiddleware = createLogger();
 
 //thunk作用使action创建函数可以返回一个function代替一个action对象
 
+
+
+/**
+ * 让你可以发起一个函数来替代 action。
+ * 这个函数接收 `dispatch` 和 `getState` 作为参数。
+ *
+ * 对于（根据 `getState()` 的情况）提前退出，或者异步控制流（ `dispatch()` 一些其他东西）来说，这非常有用。
+ *
+ * `dispatch` 会返回被发起函数的返回值。
+ */
+
+
+
+//compose
+//从右到左来组合多个函数。
+
+//这是函数式编程中的方法，为了方便，被放到了 Redux 里。
+//当需要把多个 store 增强器 依次执行的时候，需要用到它。
+
+//参数(arguments): 需要合成的多个函数。每个函数都接收一个函数作为参数，然后返回一个函数。
+//返回值
+//(Function): 从右到左把接收到的函数合成后的最终函数。
+
 const createStoreWithMiddleware = compose(
     applyMiddleware(
         thunk,
         loggerMiddleware
-    ),
+    )
 )(createStore);
 
 export default function configureStore(initialState) {
   const store = createStoreWithMiddleware(reducer, initialState);
   return store;
 }
+
+
+
+
+//使用 createStore 创建的 “纯正” store 只支持普通对象类型的 action，
+// 而且会立即传到 reducer 来执行。
+
+//但是，如果你用 applyMiddleware 来套住 createStore 时，
+// middleware 可以修改 action 的执行，并支持执行 dispatch intent（意图）。
+// Intent 一般是异步操作如 Promise、Observable 或者 Thunk。
+
+//Middleware 是由社区创建，
+// 并不会同 Redux 一起发行。
+// 你需要手动安装 redux-thunk 或者 redux-promise 库。
+// 你也可以创建自己的 middleware。
+
+
+
+//...middlewares (arguments): 遵循 Redux middleware API 的函数。
+// 每个 middleware 接受 Store 的 dispatch 和 getState 函数作为命名参数，并返回一个函数。
+// 该函数会被传入 被称为 next 的下一个 middleware 的 dispatch 方法，并返回一个接收 action 的新函数，这个函数可以直接调用 next(action)，或者在其他需要的时刻调用，甚至根本不去调用它。
+// 调用链中最后一个 middleware 会接受真实的 store 的 dispatch 方法作为 next 参数，并借此结束调用链。所以，middleware 的函数签名是 ({ getState, dispatch }) => next => action。

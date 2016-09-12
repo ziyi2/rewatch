@@ -78,6 +78,7 @@ examples
 - [React-Router入门教程](http://www.ruanyifeng.com/blog/2016/05/react_router.html?utm_source=tool.lu)
 - [React-Router中文文档](http://react-guide.github.io/react-router-cn/docs/Introduction.html)
 - [Redux中文文档](http://cn.redux.js.org/index.html)
+- [Redux英文文档](http://redux.js.org/docs/advanced/UsageWithReactRouter.html)
 
 
 ### github
@@ -93,11 +94,11 @@ examples
 - [react-redux-tutorial](https://github.com/lewis617/react-redux-tutorial)
 
 
-
 #### Project
 - [relax](https://github.com/relax/relax)
 - [react-server-example](https://github.com/mhart/react-server-example)
 - [react_and_redux_and_router_example](https://github.com/zjy01/react_and_redux_and_router_example)
 
 ### Next...
+- [react-router-redux(not necessary)](https://github.com/reactjs/react-router-redux)
 - [玩转React服务器端渲染](https://blog.coding.net/blog/React-server-rendering)

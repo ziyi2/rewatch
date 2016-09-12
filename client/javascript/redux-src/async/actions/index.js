@@ -62,3 +62,18 @@ export function incrementAsync(delay = 1000) {
 }
 
 //这些方法都导出,在其他文件导入时候,使用import * as actions 就可以生成一个actions对象包含所有的export
+
+
+//action (Object†): 描述应用变化的普通对象。
+// Action 是把数据传入 store 的惟一途径，所以任何数据，无论来自 UI 事件，
+// 网络回调或者是其它资源如 WebSockets，
+// 最终都应该以 action 的形式被 dispatch。
+// 按照约定，action 具有 type 字段来表示它的类型。
+// type 也可被定义为常量或者是从其它模块引入。
+// 最好使用字符串，而不是 Symbols 作为 action，因为字符串是可以被序列化的。除了 type 字段外，action 对象的结构完全取决于你。
+// 参照 Flux 标准 Action 获取如何组织 action 的建议。
+
+
+
+//更多了解服务器端渲染
+//http://cn.redux.js.org/docs/api/applyMiddleware.html

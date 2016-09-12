@@ -1877,10 +1877,37 @@ webpackJsonp([3],[
 	    counter: state.counter
 	  };
 	}
+
 	//将action的所有方法绑定到props上
 	function mapDispatchToProps(dispatch) {
 	  return (0, _redux.bindActionCreators)(CounterActions, dispatch);
 	}
+
+	//let boundActionCreators = bindActionCreators(TodoActionCreators, dispatch);
+	//console.log(boundActionCreators);
+	//// {
+	////   addTodo: Function,
+	////   removeTodo: Function
+	//// }
+
+
+	//console.log(CounterActions);
+	// {
+	//   addTodo: Function,
+	//   removeTodo: Function
+	// }
+
+
+	//bindActionCreators
+
+	//把 action creators 转成拥有同名 keys 的对象，
+	//但使用 dispatch 把每个 action creator 包围起来，这样可以直接调用它们。
+
+	//惟一使用 bindActionCreators 的场景是当你需要
+	// 把 action creator 往下传到一个组件上，
+	// 却不想让这个组件觉察到 Redux 的存在，
+	// 而且不希望把 Redux store 或 dispatch 传给它
+
 
 	//通过react-redux提供的connect方法将我们需要的state中的数据和actions中的方法绑定到props上
 	exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_Counter2.default);
@@ -2066,6 +2093,20 @@ webpackJsonp([3],[
 
 	//这些方法都导出,在其他文件导入时候,使用import * as actions 就可以生成一个actions对象包含所有的export
 
+
+	//action (Object†): 描述应用变化的普通对象。
+	// Action 是把数据传入 store 的惟一途径，所以任何数据，无论来自 UI 事件，
+	// 网络回调或者是其它资源如 WebSockets，
+	// 最终都应该以 action 的形式被 dispatch。
+	// 按照约定，action 具有 type 字段来表示它的类型。
+	// type 也可被定义为常量或者是从其它模块引入。
+	// 最好使用字符串，而不是 Symbols 作为 action，因为字符串是可以被序列化的。除了 type 字段外，action 对象的结构完全取决于你。
+	// 参照 Flux 标准 Action 获取如何组织 action 的建议。
+
+
+	//更多了解服务器端渲染
+	//http://cn.redux.js.org/docs/api/applyMiddleware.html
+
 /***/ },
 /* 54 */
 /***/ function(module, exports, __webpack_require__) {
@@ -2196,12 +2237,50 @@ webpackJsonp([3],[
 
 	//thunk作用使action创建函数可以返回一个function代替一个action对象
 
+
+	/**
+	 * 让你可以发起一个函数来替代 action。
+	 * 这个函数接收 `dispatch` 和 `getState` 作为参数。
+	 *
+	 * 对于（根据 `getState()` 的情况）提前退出，或者异步控制流（ `dispatch()` 一些其他东西）来说，这非常有用。
+	 *
+	 * `dispatch` 会返回被发起函数的返回值。
+	 */
+
+	//compose
+	//从右到左来组合多个函数。
+
+	//这是函数式编程中的方法，为了方便，被放到了 Redux 里。
+	//当需要把多个 store 增强器 依次执行的时候，需要用到它。
+
+	//参数(arguments): 需要合成的多个函数。每个函数都接收一个函数作为参数，然后返回一个函数。
+	//返回值
+	//(Function): 从右到左把接收到的函数合成后的最终函数。
+
 	var createStoreWithMiddleware = (0, _redux.compose)((0, _redux.applyMiddleware)(_reduxThunk2.default, loggerMiddleware))(_redux.createStore);
 
 	function configureStore(initialState) {
 	    var store = createStoreWithMiddleware(_reducers2.default, initialState);
 	    return store;
 	}
+
+	//使用 createStore 创建的 “纯正” store 只支持普通对象类型的 action，
+	// 而且会立即传到 reducer 来执行。
+
+	//但是，如果你用 applyMiddleware 来套住 createStore 时，
+	// middleware 可以修改 action 的执行，并支持执行 dispatch intent（意图）。
+	// Intent 一般是异步操作如 Promise、Observable 或者 Thunk。
+
+	//Middleware 是由社区创建，
+	// 并不会同 Redux 一起发行。
+	// 你需要手动安装 redux-thunk 或者 redux-promise 库。
+	// 你也可以创建自己的 middleware。
+
+
+	//...middlewares (arguments): 遵循 Redux middleware API 的函数。
+	// 每个 middleware 接受 Store 的 dispatch 和 getState 函数作为命名参数，并返回一个函数。
+	// 该函数会被传入 被称为 next 的下一个 middleware 的 dispatch 方法，并返回一个接收 action 的新函数，这个函数可以直接调用 next(action)，或者在其他需要的时刻调用，甚至根本不去调用它。
+	// 调用链中最后一个 middleware 会接受真实的 store 的 dispatch 方法作为 next 参数，并借此结束调用链。所以，middleware 的函数签名是 ({ getState, dispatch }) => next => action。
 
 /***/ },
 /* 55 */
@@ -2256,6 +2335,38 @@ webpackJsonp([3],[
 
 	exports.default = rootReducer;
 
+	//通过为传入对象的 reducer 命名不同来控制 state key 的命名。
+	//例如，你可以调用 combineReducers({ todos: myTodosReducer, counter: myCounterReducer })
+	//将 state 结构变为 { todos, counter }
+
+	//通常的做法是命名 reducer，
+	//然后 state 再去分割那些信息，
+	//因此你可以使用 ES6 的简写方法：combineReducers({ counter, todos })。
+	//这与 combineReducers({ counter: counter, todos: todos }) 一样。
+
+
+	//本函数可以帮助你组织多个 reducer，
+	//使它们分别管理自身相关联的 state。
+	//类似于 Flux 中的多个 store 分别管理不同的 state。
+	//在 Redux 中，只有一个 store，但是 combineReducers 让你拥有多个 reducer，
+	//同时保持各自负责逻辑块的独立性。
+
+	/*
+
+	本函数设计的时候有点偏主观，就是为了避免新手犯一些常见错误。也因些我们故意设定一些规则，但如果你自己手动编写根 redcuer 时并不需要遵守这些规则。
+
+	每个传入 combineReducers 的 reducer 都需满足以下规则：
+
+	所有未匹配到的 action，必须把它接收到的第一个参数也就是那个 state 原封不动返回。
+
+	永远不能返回 undefined。当过早 return 时非常容易犯这个错误，为了避免错误扩散，遇到这种情况时 combineReducers 会抛异常。
+
+	如果传入的 state 就是 undefined，一定要返回对应 reducer 的初始 state。根据上一条规则，初始 state 禁止使用 undefined。使用 ES6 的默认参数值语法来设置初始 state 很容易，但你也可以手动检查第一个参数是否为 undefined。
+
+	虽然 combineReducers 自动帮你检查 reducer 是否符合以上规则，但你也应该牢记，并尽量遵守。
+
+	*/
+
 /***/ },
 /* 57 */
 /***/ function(module, exports) {
@@ -2284,6 +2395,28 @@ webpackJsonp([3],[
 	      return state;
 	  }
 	}
+
+	//如果 state 是普通对象，永远不要修改它！
+	//比如，reducer 里不要使用 Object.assign(state, newData)，
+	//应该使用 Object.assign({}, state, newData)。
+	//这样才不会覆盖旧的 state。
+	//也可以使用 Babel 阶段 1 中的 ES7 对象的 spread 操作 特性中的
+	//return { ...state, ...newData }。
+
+
+	//对于服务端运行的同构应用，
+	//为每一个请求创建一个 store 实例，
+	//以此让 store 相隔离。
+	// dispatch 一系列请求数据的 action 到 store 实例上，
+	// 等待请求完成后再在服务端渲染应用。
+
+
+	//如果你以前使用 Flux，
+	// 那么你只需要注意一个重要的区别。
+	// Redux 没有 Dispatcher 且不支持多个 store。
+	// 相反，只有一个单一的 store 和一个根级的 reduce 函数（reducer）。
+	// 随着应用不断变大，你应该把根级的 reducer 拆成多个小的 reducers，分别独立地操作 state 树的不同部分，而不是添加新的 stores。
+	// 这就像一个 React 应用只有一个根级的组件，这个根组件又由很多小组件构成。
 
 /***/ },
 /* 58 */
