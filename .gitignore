@@ -14,3 +14,4 @@ client/javascript/dist/*
 
 #Npm debug
 npm-debug.log
+npm-debug.log.*
