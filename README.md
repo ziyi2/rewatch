@@ -66,21 +66,45 @@ examples
 - redux-src/async
 - [redux-server-render](https://github.com/ziyi2/rewatch-server-render)
 
+## Test
+- karma:测试管理工具
+- mocha:测试库
+- enzyme:
+- chai:断言库
+- sinon
+- phantomjs:测试浏览器
+
+```javascript
+#Install Karma
+npm install karma --save-dev
+npm install karma-cli -g
+
+#Install mocha chai
+npm install mocha chai --save-dev
+
+#Install Karma plugins
+npm install karma-mocha karma-chai --save-dev
+
+#Install plugins that your project needs:
+npm install karma-mocha karma-chai karma-chrome-launcher --save-dev
+```
+
+
+
+
 
 ## Link
 
 ### website
-- [react官方](https://facebook.github.io/react/index.html)
-- [webpack官方](https://webpack.github.io/docs/)
-- [ES6,ES7,Webpack](http://www.tuicool.com/articles/fmUze2M)
-- [Nodejs,Webpack](http://www.tuicool.com/articles/zEZneuq)
+- [react](https://facebook.github.io/react/index.html)
+- [webpack](https://webpack.github.io/docs/)
 - [React示例](http://www.kancloud.cn/kancloud/create-voting-app/63976)
-- [Flux架构入门教程](http://www.ruanyifeng.com/blog/2016/01/flux.html)
+- [Flux](http://www.ruanyifeng.com/blog/2016/01/flux.html)
 - [React-Router入门教程](http://www.ruanyifeng.com/blog/2016/05/react_router.html?utm_source=tool.lu)
 - [React-Router中文文档](http://react-guide.github.io/react-router-cn/docs/Introduction.html)
 - [Redux中文文档](http://cn.redux.js.org/index.html)
 - [Redux英文文档](http://redux.js.org/docs/advanced/UsageWithReactRouter.html)
-
+- [Karma](http://karma-runner.github.io/1.0/index.html)
 
 ### github
 
@@ -102,4 +126,3 @@ examples
 
 ### Next...
 - [react-router-redux(not necessary)](https://github.com/reactjs/react-router-redux)
-- [玩转React服务器端渲染](https://blog.coding.net/blog/React-server-rendering)
