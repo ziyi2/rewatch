@@ -87,6 +87,9 @@ npm install karma-mocha karma-chai --save-dev
 
 #Install plugins that your project needs:
 npm install karma-mocha karma-chai karma-chrome-launcher --save-dev
+
+#karma-webpack
+npm install karma-webpack --save-dev
 ```
 
 
@@ -105,6 +108,7 @@ npm install karma-mocha karma-chai karma-chrome-launcher --save-dev
 - [Redux中文文档](http://cn.redux.js.org/index.html)
 - [Redux英文文档](http://redux.js.org/docs/advanced/UsageWithReactRouter.html)
 - [Karma](http://karma-runner.github.io/1.0/index.html)
+- [Karma,Webpack](http://www.tuicool.com/articles/jMvmEzI)
 
 ### github
 
@@ -117,6 +121,7 @@ npm install karma-mocha karma-chai karma-chrome-launcher --save-dev
 - [redux](https://github.com/reactjs/redux)
 - [redux-tutorial](https://github.com/react-guide/redux-tutorial-cn)
 - [react-redux-tutorial](https://github.com/lewis617/react-redux-tutorial)
+- [karma-mocha](https://github.com/karma-runner/karma-mocha.git)
 
 
 #### Project

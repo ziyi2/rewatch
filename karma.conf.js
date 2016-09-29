@@ -1,5 +1,9 @@
 // Karma configuration
-// Generated on Wed Sep 28 2016 21:39:22 GMT+0800 (CST)
+// Generated on Thu Sep 29 2016 14:12:16 GMT+0800 (中国标准时间)
+
+var webpack = require("webpack"),
+    path = require("path");
+
 
 module.exports = function(config) {
   config.set({
@@ -10,12 +14,12 @@ module.exports = function(config) {
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['mocha', 'chai'],
+    frameworks: ['mocha'],
 
 
     // list of files / patterns to load in the browser
     files: [
-      './test/*Spec.js'
+      './test/*.*'
     ],
 
 
@@ -27,6 +31,24 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
+      './test/*.*': ['webpack']
+    },
+
+    webpack: {
+      resolve: {
+        root: __dirname + "/src"
+      },
+      module: {
+        loaders: [{
+          test: /\.js$/,
+          exclude: [/node_modules/],
+          loader: "babel-loader",
+          query: {
+            compact: false,
+            presets: ["es2015"]
+          }
+        }]
+      }
     },
 
 
@@ -64,6 +86,14 @@ module.exports = function(config) {
 
     // Concurrency level
     // how many browser should be started simultaneous
-    concurrency: Infinity
+    concurrency: Infinity,
+
+    plugins: [
+      require("karma-webpack"),
+      require("karma-mocha"),
+      require("karma-chrome-launcher"),
+      require("karma-chai")
+    ]
+
   })
-}
+};

@@ -68,9 +68,12 @@
     "karma-chai": "^0.1.0",
     "karma-chrome-launcher": "^2.0.0",
     "karma-mocha": "^1.2.0",
+    "karma-sinon": "^1.0.5",
+    "karma-webpack": "^1.8.0",
     "mocha": "^3.1.0",
-    "should": "~2.1.1",
     "react": "^15.3.1",
-    "react-dom": "^15.3.1"
+    "react-dom": "^15.3.1",
+    "should": "~2.1.1",
+    "sinon": "^1.17.6"
   }
 }
