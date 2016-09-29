@@ -109,6 +109,7 @@ npm install karma-webpack --save-dev
 - [Redux英文文档](http://redux.js.org/docs/advanced/UsageWithReactRouter.html)
 - [Karma](http://karma-runner.github.io/1.0/index.html)
 - [Karma,Webpack](http://www.tuicool.com/articles/jMvmEzI)
+- [mocha](http://www.ruanyifeng.com/blog/2015/12/a-mocha-tutorial-of-examples.html)
 
 ### github
 
