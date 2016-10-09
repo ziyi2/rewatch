@@ -110,6 +110,7 @@ npm install karma-webpack --save-dev
 - [Karma](http://karma-runner.github.io/1.0/index.html)
 - [Karma,Webpack](http://www.tuicool.com/articles/jMvmEzI)
 - [mocha](http://www.ruanyifeng.com/blog/2015/12/a-mocha-tutorial-of-examples.html)
+- [Test Driven React Tutorial](http://spencerdixon.com/blog/test-driven-react-tutorial.html?utm_campaign=Front+End+Newsletter&utm_medium=email&utm_source=Front_End_Newsletter_2)
 
 ### github
 
@@ -123,9 +124,11 @@ npm install karma-webpack --save-dev
 - [redux-tutorial](https://github.com/react-guide/redux-tutorial-cn)
 - [react-redux-tutorial](https://github.com/lewis617/react-redux-tutorial)
 - [karma-mocha](https://github.com/karma-runner/karma-mocha.git)
+- [react-testing-starter-kit](https://github.com/SpencerCDixon/react-testing-starter-kit)
 
 
 #### Project
+- [react-redux-starter-kit](https://github.com/davezuko/react-redux-starter-kit)
 - [relax](https://github.com/relax/relax)
 - [react-server-example](https://github.com/mhart/react-server-example)
 - [react_and_redux_and_router_example](https://github.com/zjy01/react_and_redux_and_router_example)
