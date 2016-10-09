@@ -111,6 +111,9 @@ npm install karma-webpack --save-dev
 - [Karma,Webpack](http://www.tuicool.com/articles/jMvmEzI)
 - [mocha](http://www.ruanyifeng.com/blog/2015/12/a-mocha-tutorial-of-examples.html)
 - [Test Driven React Tutorial](http://spencerdixon.com/blog/test-driven-react-tutorial.html?utm_campaign=Front+End+Newsletter&utm_medium=email&utm_source=Front_End_Newsletter_2)
+- [前端自动化单元测试初探](http://www.jianshu.com/p/6726c0410650)
+
+
 
 ### github
 
