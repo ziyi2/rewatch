@@ -23,27 +23,12 @@ npm stop
 
 ## React Flux
 
-```javascript
-npm install flux --save
-```
-
 example
 - none-flux-src
 - flux-src
 
 
 ## React Router
-
-```javascript
-npm install react-router --save
-```
-
-服务器端渲染
-
-```javascript
-npm run webpack
-npm run start-server
-```
 
 examples
 - router-browser-src
@@ -52,12 +37,7 @@ examples
 
 ## React Redux
 
-```javascript
-npm install react-redux redux --save
-```
-
 examples
-
 - redux-src/counter
 - redux-src/todos-test
 - redux-src/todos
@@ -73,27 +53,6 @@ examples
 - chai:断言库
 - sinon
 - phantomjs:测试浏览器
-
-```javascript
-#Install Karma
-npm install karma --save-dev
-npm install karma-cli -g
-
-#Install mocha chai
-npm install mocha chai --save-dev
-
-#Install Karma plugins
-npm install karma-mocha karma-chai --save-dev
-
-#Install plugins that your project needs:
-npm install karma-mocha karma-chai karma-chrome-launcher --save-dev
-
-#karma-webpack
-npm install karma-webpack --save-dev
-```
-
-
-
 
 
 ## Link
